@@ -28,7 +28,7 @@ var Sliding : bool = false
 var Slide_Timer =0.0
 var Slide_Timer_Max =3.0
 var Slide_Vector = Vector2.ZERO
-var Slide_Speed = 50
+var Slide_Speed = 30
 
 func _ready() -> void:
 	# отключаем курсор мыши 
@@ -111,8 +111,9 @@ func _physics_process(delta: float) -> void:
 
 #Sliding logic
 	if Sliding:
-		
+		current_speed = (Slide_Timer+0.1)*Slide_Speed
 		Slide_Timer -=delta
+		
 		#print(Slide_Timer)
 		if Slide_Timer <= 0:
 			Sliding=false
@@ -131,7 +132,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY+(0.1*current_speed)
 
 
-	
+	#direction определяет направление 
 	direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*Lerp_Speed)
 	
 	#логика запрета поворота при подкате
@@ -142,10 +143,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 		
-		if Sliding:
-				print("Cупер скорость")
-				velocity.x = direction.x * (Slide_Timer+0.1)*Slide_Speed
-				velocity.z = direction.z * (Slide_Timer+0.1)*Slide_Speed
+	
 	else:
 		print("обычная скорость")
 		velocity.x = move_toward(velocity.x, 0, current_speed)
