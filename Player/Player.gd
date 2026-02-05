@@ -53,16 +53,16 @@ func _physics_process(delta: float) -> void:
 		Sprinting =false
 		Crouching =true
 		Sliding = false
-		print(" КРАДЕМСЯ")
+		#print(" КРАДЕМСЯ")
 	elif Input.is_action_just_pressed("Crouch") and Sprinting:
-		print("CКОЛЬЗИМ")
+		#print("CКОЛЬЗИМ")
 		Slide_Timer = Slide_Timer_Max
 		Walking =false
 		Sprinting =false
 		Crouching =true
 		Sliding = true
 	if Input.is_action_just_released("Crouch"):
-		print("не КРАДЕМСЯ")
+		#print("не КРАДЕМСЯ")
 		Walking =true
 		
 		Crouching =false
@@ -72,9 +72,9 @@ func _physics_process(delta: float) -> void:
 		Sprinting =true
 		Crouching =false
 		Sliding = false
-		print("БЕЖИМ")
+		#print("БЕЖИМ")
 	if Input.is_action_just_released("Sprint"):
-		print("не бежим")
+		#print("не бежим")
 		Walking =true
 		Sprinting =false
 		Crouching =false
@@ -85,7 +85,7 @@ func _physics_process(delta: float) -> void:
 		Walking =true
 		Crouching =false
 		Sliding = false
-		print("ходим")
+		#print("ходим")
 	
 	
 	#логика присидания
@@ -119,7 +119,7 @@ func _physics_process(delta: float) -> void:
 			Sliding=false
 			Crouching =false
 			Slide_Timer = 0
-			print("slide END")
+			#print("slide END")
 		
 		
 	# Add the gravity.
@@ -145,8 +145,8 @@ func _physics_process(delta: float) -> void:
 		
 	
 	else:
-		print("обычная скорость")
+		#print("обычная скорость")
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
-	print(current_speed)
+	#print(current_speed)
 	move_and_slide()

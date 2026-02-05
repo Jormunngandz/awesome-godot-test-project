@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="new-game-project"
-run/main_scene="uid://tdq5v1cqrsg0"
+run/main_scene="uid://pmppnyt1emko"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Messager="*uid://ceuqu5ephkyr"
 
 [display]
 
