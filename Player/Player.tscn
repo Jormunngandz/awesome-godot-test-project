@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxeileh2tvous"]
 
 [ext_resource type="Script" uid="uid://bc730vf4meud6" path="res://Player/Player.gd" id="1_3qydi"]
+[ext_resource type="PackedScene" uid="uid://bwixg3utb3nab" path="res://assets/3D/SWORD.fbx" id="2_q3lat"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
 
@@ -34,3 +35,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D" unique_id=1517000169]
 transform = Transform3D(2, 0, 0, 0, -2, 3.019916e-07, 0, -3.019916e-07, -2, 0, 0, 0)
+
+[node name="SWORD" parent="CharacterBody3D" unique_id=806770813 instance=ExtResource("2_q3lat")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5033318, 1.8042856, -0.85134983)

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://tdq5v1cqrsg0"]
+[gd_scene format=3 uid="uid://ckq22x8p63pig"]
 
 [ext_resource type="Material" uid="uid://bmi3jp6fbrd7v" path="res://material/Base_Grid_Material_3d.tres" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://dxeileh2tvous" path="res://Player/Player.tscn" id="2_rarhs"]
