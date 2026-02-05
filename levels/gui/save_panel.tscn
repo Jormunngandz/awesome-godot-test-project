@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cy6fnhlo201"]
+
+[ext_resource type="Texture2D" uid="uid://dfjrlqxeobiar" path="res://icon.svg" id="1_ql0d8"]
+
+[node name="SavePanel" type="PanelContainer" unique_id=604349152]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1559874961]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SplitContainer" type="SplitContainer" parent="MarginContainer" unique_id=1472162179]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/SplitContainer" unique_id=1769953680]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("1_ql0d8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/SplitContainer" unique_id=84754624]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SaveNameLabel" type="Label" parent="MarginContainer/SplitContainer/VBoxContainer" unique_id=1972856894]
+layout_mode = 2
+text = "Save Name"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/SplitContainer/VBoxContainer" unique_id=738243790]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Date" type="Label" parent="MarginContainer/SplitContainer/VBoxContainer/HSplitContainer" unique_id=1041585099]
+layout_mode = 2
+text = "Save Date"
+
+[node name="PlayTime" type="Label" parent="MarginContainer/SplitContainer/VBoxContainer/HSplitContainer" unique_id=76024600]
+layout_mode = 2
+text = "Time of playing"

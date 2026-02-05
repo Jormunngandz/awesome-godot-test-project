@@ -1,0 +1,249 @@
+[gd_scene format=3 uid="uid://dtxj5hmguy7dh"]
+
+[ext_resource type="Script" uid="uid://p6cvhx6uwrxn" path="res://levels/gui/main_menu.gd" id="1_o72ik"]
+[ext_resource type="PackedScene" uid="uid://cy6fnhlo201" path="res://levels/gui/save_panel.tscn" id="2_e6nxt"]
+
+[node name="MainMenu" type="Control" unique_id=554895753]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o72ik")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1128094761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23529412, 0.6862745, 0.3254902, 0.13725491)
+
+[node name="MenuContent" type="CenterContainer" parent="." unique_id=1027415231]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MenuContent" unique_id=594408905]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Start" type="Button" parent="MenuContent/ButtonContainer" unique_id=883512370]
+layout_mode = 2
+text = "Start"
+
+[node name="Save" type="Button" parent="MenuContent/ButtonContainer" unique_id=320407227]
+layout_mode = 2
+text = "Save"
+
+[node name="Load" type="Button" parent="MenuContent/ButtonContainer" unique_id=1472784650]
+layout_mode = 2
+text = "Load"
+
+[node name="Settings" type="Button" parent="MenuContent/ButtonContainer" unique_id=511398123]
+layout_mode = 2
+text = "Option"
+
+[node name="MainMenu" type="Button" parent="MenuContent/ButtonContainer" unique_id=751882004]
+layout_mode = 2
+text = "Main menu"
+
+[node name="Exit" type="Button" parent="MenuContent/ButtonContainer" unique_id=1414807074]
+layout_mode = 2
+text = "Exit"
+
+[node name="OptionMenu" type="CenterContainer" parent="." unique_id=1900897119]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionTabContent" type="TabContainer" parent="OptionMenu" unique_id=1075722185]
+custom_minimum_size = Vector2(500, 800)
+layout_mode = 2
+current_tab = 0
+
+[node name="OptionTab1" type="MarginContainer" parent="OptionMenu/OptionTabContent" unique_id=359682438]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+metadata/_tab_index = 0
+
+[node name="OptionTabMerge" type="NinePatchRect" parent="OptionMenu/OptionTabContent/OptionTab1" unique_id=10602560]
+layout_mode = 2
+
+[node name="TabContent" type="HBoxContainer" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge" unique_id=1214493794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent" unique_id=1193824321]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent/VBoxContainer" unique_id=789974185]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option 1"
+
+[node name="Label2" type="Label" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent/VBoxContainer" unique_id=951414021]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option 1"
+
+[node name="Label3" type="Label" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent/VBoxContainer" unique_id=1140298272]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option 1"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent" unique_id=185538046]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent/VBoxContainer2" unique_id=1010857920]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option value 1"
+
+[node name="Label2" type="Label" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent/VBoxContainer2" unique_id=1745697860]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option value 1"
+
+[node name="Label3" type="Label" parent="OptionMenu/OptionTabContent/OptionTab1/OptionTabMerge/TabContent/VBoxContainer2" unique_id=273790135]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option value 1"
+
+[node name="OptionTab2" type="MarginContainer" parent="OptionMenu/OptionTabContent" unique_id=1266229835]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+metadata/_tab_index = 1
+
+[node name="OptionTabMerge" type="NinePatchRect" parent="OptionMenu/OptionTabContent/OptionTab2" unique_id=123107460]
+layout_mode = 2
+
+[node name="TabContent" type="HBoxContainer" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge" unique_id=95282999]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent" unique_id=1185101867]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent/VBoxContainer" unique_id=1513310668]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option 1"
+
+[node name="Label2" type="Label" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent/VBoxContainer" unique_id=664922428]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option 1"
+
+[node name="Label3" type="Label" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent/VBoxContainer" unique_id=1790255104]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option 1"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent" unique_id=248260070]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent/VBoxContainer2" unique_id=1600056941]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option value 1"
+
+[node name="Label2" type="Label" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent/VBoxContainer2" unique_id=2029901054]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option value 1"
+
+[node name="Label3" type="Label" parent="OptionMenu/OptionTabContent/OptionTab2/OptionTabMerge/TabContent/VBoxContainer2" unique_id=207977487]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Test option value 1"
+
+[node name="LoadMenu" type="CenterContainer" parent="." unique_id=249776788]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContent" type="MarginContainer" parent="LoadMenu" unique_id=1459458934]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="SavesList" type="VBoxContainer" parent="LoadMenu/MenuContent" unique_id=556754708]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LoadMenu/MenuContent/SavesList" unique_id=1869993342]
+layout_mode = 2
+text = "Saves:"
+
+[node name="SavePanel" parent="LoadMenu/MenuContent/SavesList" unique_id=604349152 instance=ExtResource("2_e6nxt")]
+layout_mode = 2
+
+[node name="SavePanel2" parent="LoadMenu/MenuContent/SavesList" unique_id=2090365235 instance=ExtResource("2_e6nxt")]
+layout_mode = 2
+
+[node name="SavePanel3" parent="LoadMenu/MenuContent/SavesList" unique_id=1437224702 instance=ExtResource("2_e6nxt")]
+layout_mode = 2
+
+[connection signal="button_up" from="MenuContent/ButtonContainer/Load" to="." method="_on_load_button_up"]
+[connection signal="button_up" from="MenuContent/ButtonContainer/Settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="MenuContent/ButtonContainer/Exit" to="." method="_on_exit_button_up"]
