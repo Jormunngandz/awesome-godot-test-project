@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dnnrewvgtb2hw"]
+
+[ext_resource type="Script" uid="uid://6h205kdh4as8" path="res://scenes/NPC/Enemies/Dummy_Script.gd" id="1_1ltet"]
+[ext_resource type="PackedScene" uid="uid://4khhdj8cyyps" path="res://assets/3D/Enemies/3dm_Dummy.glb" id="1_3akyb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3akyb"]
+size = Vector3(0.6621094, 0.47143555, 0.38909912)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ltet"]
+size = Vector3(1, 1.0889893, 0.46435547)
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=481157967]
+script = ExtResource("1_1ltet")
+
+[node name="CollisionShape3D_Head" type="CollisionShape3D" parent="." unique_id=379454087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013183594, 2.18085, 0.009429932)
+shape = SubResource("BoxShape3D_3akyb")
+
+[node name="CollisionShape3D_Body" type="CollisionShape3D" parent="." unique_id=817665673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1568383, 0.008056641)
+shape = SubResource("BoxShape3D_1ltet")
+
+[node name="3dm_Dummy" parent="." unique_id=495072572 instance=ExtResource("1_3akyb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0090759, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1553795742]
