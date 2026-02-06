@@ -7,6 +7,15 @@ extends Node3D
 var can_slah=false
 var enemies_in_range = []
 
+func initialize():
+	pass
+	
+func _ready() -> void:
+	pass
+	
+
+	
+	
 func _physics_process(delta: float) -> void:
 	print("меч")
 	if Input.is_action_just_pressed("Attack"):

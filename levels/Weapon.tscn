@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://07y4fqx6a0pp"]
 
-[ext_resource type="PackedScene" uid="uid://bwixg3utb3nab" path="res://assets/3D/SWORD.fbx" id="1_1lpys"]
+[ext_resource type="PackedScene" uid="uid://bwixg3utb3nab" path="res://assets/3D/Weapon/SWORD.fbx" id="1_1lpys"]
 [ext_resource type="Script" uid="uid://dyp2af5k3v6nb" path="res://levels/SWORD.gd" id="1_ho545"]
 [ext_resource type="AudioStream" uid="uid://du0bo1t6ypvue" path="res://assets/Sounds/Weapon SOunds/hithi.wav" id="2_ho545"]
 
@@ -13,26 +13,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SWORD:rotation")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23610988, 0.5),
+"times": PackedFloat32Array(0.001, 0.26666668, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.56516415, 0.56504935, 0.8693784), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SWORD:position")
+tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.23610988, 0.5),
+"times": PackedFloat32Array(0.001, 0.26666668, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0.4290481, 0), Vector3(-0.22467077, 0.4290481, 0.4149316), Vector3(0, 0.4290481, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.6405992, -0.4131725, -0.64978397), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ho545"]
@@ -40,7 +40,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SWORD:rotation")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,14 +52,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SWORD:position")
+tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.4290481, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0ms3"]
@@ -69,10 +69,11 @@ _data = {
 }
 
 [node name="SWORD" type="Node3D" unique_id=1945972356]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, 0, 0, 0)
 script = ExtResource("1_ho545")
 
 [node name="SWORD" parent="." unique_id=806770813 instance=ExtResource("1_1lpys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4290481, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4290481, 0)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SWORD" unique_id=837788094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3894101, 0)

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bwixg3utb3nab"
-path="res://.godot/imported/SWORD.fbx-da45b7d1daf9bfc9aa2444de08176b13.scn"
+path="res://.godot/imported/SWORD.fbx-a2a603b262bfd2cc9eed519edf81bed8.scn"
 
 [deps]
 
-source_file="res://assets/3D/SWORD.fbx"
-dest_files=["res://.godot/imported/SWORD.fbx-da45b7d1daf9bfc9aa2444de08176b13.scn"]
+source_file="res://assets/3D/Weapon/SWORD.fbx"
+dest_files=["res://.godot/imported/SWORD.fbx-a2a603b262bfd2cc9eed519edf81bed8.scn"]
 
 [params]
 

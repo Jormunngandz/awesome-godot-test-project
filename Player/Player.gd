@@ -7,6 +7,8 @@ extends CharacterBody3D
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 
 
+
+
 #Константы
 const WALKING_SPEED = 5.0
 const SPRINTING_SPEED = 20.0
