@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dyary6rftrc2d"]
+
+[ext_resource type="Script" uid="uid://djyvjackcft4h" path="res://src/weapon/skull_gun_projectile.gd" id="1_62m5x"]
+[ext_resource type="PackedScene" uid="uid://h2vvil7mnlur" path="res://assets/weapon/skull_gun/skull.fbx" id="1_bscid"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8881f"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="Projectile_Skull" type="Node3D" unique_id=1103673876]
+script = ExtResource("1_62m5x")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=113057594]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1189863004]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+shape = SubResource("BoxShape3D_8881f")
+
+[node name="Skull" parent="Area3D" unique_id=233544053 instance=ExtResource("1_bscid")]
+transform = Transform3D(0.9999798, 0.0063397745, -0.00040995068, 8.724066e-08, 0.064514816, 0.99791676, 0.006353015, -0.9978966, 0.06451351, -3.0670837e-08, -0.45160073, 0.42587525)
