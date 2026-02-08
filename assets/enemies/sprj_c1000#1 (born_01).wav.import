@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5eshwbt232j1"
+path="res://.godot/imported/sprj_c1000#1 (born_01).wav-780fdea86437d98aeb494806b13c0368.sample"
+
+[deps]
+
+source_file="res://assets/enemies/sprj_c1000#1 (born_01).wav"
+dest_files=["res://.godot/imported/sprj_c1000#1 (born_01).wav-780fdea86437d98aeb494806b13c0368.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

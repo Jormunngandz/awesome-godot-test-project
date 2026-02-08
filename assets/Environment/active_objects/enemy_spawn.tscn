@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bh17fnl68oioa"]
+
+[ext_resource type="Script" uid="uid://bkypnprs8dvx5" path="res://assets/Environment/active_objects/enemy_spawn.gd" id="1_uewyn"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jjcb0"]
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_rqbox"]
+size = Vector3(0.1, 0.1, 2)
+
+[node name="EnemySpawn" type="Node3D" unique_id=166571349]
+script = ExtResource("1_uewyn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=669527655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0851135, 0)
+mesh = SubResource("CylinderMesh_jjcb0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=476073592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12585449, 1.5449829)
+mesh = SubResource("BoxMesh_rqbox")
+
+[node name="marker_3d" type="Marker3D" parent="." unique_id=1516305373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48779297, 4.7887573)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6h205kdh4as8" path="res://src/dummy.gd" id="1_17pi3"]
 [ext_resource type="PackedScene" uid="uid://4khhdj8cyyps" path="res://assets/enemies/dummy.glb" id="2_ioovt"]
+[ext_resource type="AudioStream" uid="uid://b5eshwbt232j1" path="res://assets/enemies/sprj_c1000#1 (born_01).wav" id="3_ljk0a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3akyb"]
 size = Vector3(0.6621094, 0.47143555, 0.38909912)
@@ -9,18 +10,70 @@ size = Vector3(0.6621094, 0.47143555, 0.38909912)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ltet"]
 size = Vector3(1, 1.0889893, 0.46435547)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljk0a"]
+size = Vector3(1, 0.29830933, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ljk0a"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljk0a"]
+albedo_color = Color(0.9098039, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(0.7372549, 0, 0, 1)
+emission_energy_multiplier = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_x7iiq"]
+material = SubResource("StandardMaterial3D_ljk0a")
+size = Vector3(0.3, 0.3, 0.3)
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=481157967]
 script = ExtResource("1_17pi3")
-
-[node name="CollisionShape3D_Head" type="CollisionShape3D" parent="." unique_id=379454087]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013183594, 2.18085, 0.009429932)
-shape = SubResource("BoxShape3D_3akyb")
-
-[node name="CollisionShape3D_Body" type="CollisionShape3D" parent="." unique_id=817665673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1568383, 0.008056641)
-shape = SubResource("BoxShape3D_1ltet")
 
 [node name="3dm_Dummy" parent="." unique_id=1121066317 instance=ExtResource("2_ioovt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0090759, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1553795742]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=368457490]
+stream = ExtResource("3_ljk0a")
+volume_db = 42.94
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1311967813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7279222, 0)
+pixel_size = 0.01
+text = "test"
+
+[node name="Area3D_head" type="Area3D" parent="." unique_id=121534082]
+
+[node name="CollisionShape3D_Head" type="CollisionShape3D" parent="Area3D_head" unique_id=379454087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013183594, 2.18085, 0.009429932)
+shape = SubResource("BoxShape3D_3akyb")
+
+[node name="Area3D_body" type="Area3D" parent="." unique_id=653503787]
+
+[node name="CollisionShape3D_Body" type="CollisionShape3D" parent="Area3D_body" unique_id=817665673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1568383, 0.008056641)
+shape = SubResource("BoxShape3D_1ltet")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1875117190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15150452, 0)
+shape = SubResource("BoxShape3D_ljk0a")
+
+[node name="GPUParticles3D_blood" type="GPUParticles3D" parent="." unique_id=1780015844]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.4391012, 0.030972198)
+emitting = false
+amount = 48
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ljk0a")
+draw_pass_1 = SubResource("BoxMesh_x7iiq")
+
+[connection signal="area_entered" from="Area3D_head" to="." method="_on_area_3d_head_area_entered"]
+[connection signal="area_entered" from="Area3D_body" to="." method="_on_area_3d_body_area_entered"]
+[connection signal="body_entered" from="Area3D_body" to="." method="_on_area_3d_body_body_entered"]
