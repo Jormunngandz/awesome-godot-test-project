@@ -9,9 +9,9 @@ extends CharacterBody3D
 @onready var _3_dm_dummy: Node3D = $"3dm_Dummy"
 
 @onready var area_3d_body: Area3D = $Area3D_body
+ 
 
-
-
+var isdead : bool =false
 var player = null
 const speed = 2.0
 var dummy_hp =30 
@@ -29,23 +29,31 @@ func _physics_process(delta: float) -> void:
 	
 	navigation_agent_3d.set_target_position(player.global_position)
 
-	var next_nav_point = navigation_agent_3d.get_next_path_position()
+	var next_nav_point_Y = navigation_agent_3d.get_next_path_position()
+	var next_nav_point = Vector3(next_nav_point_Y.x,0,next_nav_point_Y.z)
 	velocity = (next_nav_point- global_position).normalized()*speed
-	look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z))
+	look_at(Vector3(next_nav_point.x, global_position.y, next_nav_point.z),Vector3.UP)
 	#проверять HP Каждый тик? как то тупо
 	if dummy_hp <=0:
 		dead()
+		
+	#if not is_on_floor():
+		#velocity += get_gravity() * delta
 	move_and_slide()
 	
 	
 func dead():
-	gpu_particles_3d_blood.emitting = true
-	_3_dm_dummy.visible = false
-	collision_shape_3d.disabled = true
-	label_3d.visible = false
-	area_3d_head.monitorable= false
-	area_3d_body.monitorable= false
-	await get_tree().create_timer(5).timeout
+	if isdead==false:
+		isdead = true
+		gpu_particles_3d_blood.emitting = true
+		_3_dm_dummy.visible = false
+		collision_shape_3d.disabled = true
+		label_3d.visible = false
+		area_3d_head.monitorable= false
+		area_3d_body.monitorable= false
+		audio_stream_player_3d.play()
+	
+	await get_tree().create_timer(3).timeout
 	queue_free()
 	
 

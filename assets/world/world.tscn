@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ckq22x8p63pig"]
 
 [ext_resource type="Material" uid="uid://bmi3jp6fbrd7v" path="res://assets/world/word_base_grid_material.tres" id="1_t3mbi"]
-[ext_resource type="PackedScene" uid="uid://dnnrewvgtb2hw" path="res://assets/enemies/dummy.tscn" id="2_aekxa"]
 [ext_resource type="PackedScene" uid="uid://bh17fnl68oioa" path="res://assets/Environment/active_objects/enemy_spawn.tscn" id="3_aekxa"]
 [ext_resource type="PackedScene" uid="uid://dxeileh2tvous" path="res://assets/player/player.tscn" id="3_r2l5x"]
 [ext_resource type="Texture2D" uid="uid://nra8ho4ys3pc" path="res://assets/world/world_skybox.hdr" id="4_hukdr"]
@@ -65,12 +64,8 @@ material = ExtResource("1_t3mbi")
 
 [node name="NPC" type="Node3D" parent="Surfaces/NavigationRegion3D" unique_id=1455266903]
 
-[node name="S_Dummy" parent="Surfaces/NavigationRegion3D/NPC" unique_id=481157967 groups=["Enemy"] instance=ExtResource("2_aekxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.850146, 2.9589062, 25.335583)
-player_path = NodePath("../../../../Player")
-
 [node name="EnemySpawn" parent="Surfaces" unique_id=166571349 instance=ExtResource("3_aekxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0312634, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.014121, 0)
 
 [node name="Player" parent="." unique_id=198275142 groups=["Player"] instance=ExtResource("3_r2l5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.14466, 4.05007, 3.6329632)

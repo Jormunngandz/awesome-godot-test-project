@@ -34,33 +34,34 @@ size = Vector3(0.3, 0.3, 0.3)
 script = ExtResource("1_17pi3")
 
 [node name="3dm_Dummy" parent="." unique_id=1121066317 instance=ExtResource("2_ioovt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0090759, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.0400417, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1553795742]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=368457490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4309536, 0)
 stream = ExtResource("3_ljk0a")
 volume_db = 42.94
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1311967813]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7279222, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.7279222, 0)
 pixel_size = 0.01
 text = "test"
 
 [node name="Area3D_head" type="Area3D" parent="." unique_id=121534082]
 
 [node name="CollisionShape3D_Head" type="CollisionShape3D" parent="Area3D_head" unique_id=379454087]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013183594, 2.18085, 0.009429932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013183594, 2.1973338, 0.009429932)
 shape = SubResource("BoxShape3D_3akyb")
 
 [node name="Area3D_body" type="Area3D" parent="." unique_id=653503787]
 
 [node name="CollisionShape3D_Body" type="CollisionShape3D" parent="Area3D_body" unique_id=817665673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1568383, 0.008056641)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2161804, 0.008056641)
 shape = SubResource("BoxShape3D_1ltet")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1875117190]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15150452, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15483308, 0)
 shape = SubResource("BoxShape3D_ljk0a")
 
 [node name="GPUParticles3D_blood" type="GPUParticles3D" parent="." unique_id=1780015844]
