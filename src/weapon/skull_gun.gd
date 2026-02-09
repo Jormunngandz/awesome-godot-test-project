@@ -25,5 +25,5 @@ func _physics_process(delta):
 		Skull_instance.transform.basis = marker_3d_muzzle.global_transform.basis
 		get_tree().root.add_child(Skull_instance)
 		audio_stream_player_3d.play()
-		print("вызываю череп")
+		#print("вызываю череп")
 		

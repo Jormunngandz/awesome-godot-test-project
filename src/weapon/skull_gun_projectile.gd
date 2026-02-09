@@ -3,7 +3,7 @@ extends Node3D
 @onready var skull: Node3D = $Area3D/Skull
 @onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 @onready var gpu_particles_3d: GPUParticles3D = $Area3D/GPUParticles3D
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 var speed=10
@@ -30,28 +30,26 @@ func Damage_Destruct():
 	if is_dying == false:
 		is_dying = true
 			#удаляем колизию и модельку 
-		collision_shape_3d.disabled = true
-		skull.visible = false
+		#collision_shape_3d.disabled = true
+		#skull.visible = false
 		#партикли взрыв
-		gpu_particles_3d.emitting = true
+		#gpu_particles_3d.emitting = true
 		#включаем звук. проверка что звука нет
-		if audio_stream_player_3d.playing == false:
-			audio_stream_player_3d.play()
+		animation_player.play("Hit")
 
-		await get_tree().create_timer(2).timeout
+		await animation_player.animation_finished
 	#уничтожаем снаряд 
-		queue_free()
+		#queue_free()
 		print("череп удален")
 
 
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	
-	Damage_Destruct()
-	print("череп столкнулся c телом") 
+#func _on_area_3d_body_entered(body: Node3D) -> void:
+	#Damage_Destruct()
+	#print("череп столкнулся c телом") 
 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	Damage_Destruct()
-	print("череп столкнулся c зоной") 
+	#print("череп столкнулся c зоной") 
