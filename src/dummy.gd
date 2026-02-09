@@ -66,14 +66,18 @@ func dead():
 	
 
 func _on_area_3d_body_area_entered(area: Area3D) -> void:
-	dummy_hp -=5
-	label_3d.text = str(dummy_hp)
+	if area.get_parent() is Projectile:    	
+		dummy_hp -=area.get_parent().damage
+		label_3d.text = str(dummy_hp)
 	if dummy_hp <=0:
 		dead()
+	
 
 
 func _on_area_3d_head_area_entered(area: Area3D) -> void:
-	dummy_hp -=20 
-	label_3d.text = str(dummy_hp)
+	
+	if area.get_parent() is Projectile:    	
+		dummy_hp -=area.get_parent().damage*2
+		label_3d.text = str(dummy_hp)
 	if dummy_hp <=0:
 		dead()

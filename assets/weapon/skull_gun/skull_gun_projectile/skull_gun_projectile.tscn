@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://djyvjackcft4h" path="res://src/weapon/skull_gun_projectile.gd" id="1_62m5x"]
 [ext_resource type="PackedScene" uid="uid://h2vvil7mnlur" path="res://assets/weapon/skull_gun/skull.fbx" id="1_bscid"]
-[ext_resource type="AudioStream" uid="uid://0c3obg3w286d" path="res://assets/weapon/skull_gun/xbow_hitbod2.wav" id="3_itcdx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8881f"]
 size = Vector3(0.3, 0.3, 0.3)
@@ -37,52 +36,37 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/1/type = "audio"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/AudioStreamPlayer3D")
+tracks/1/path = NodePath("Area3D/Skull:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_itcdx")
-}],
-"times": PackedFloat32Array(0.06666667)
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
-tracks/1/use_blend = true
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Area3D/Skull:visible")
+tracks/2/path = NodePath("Area3D/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.06666667),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Area3D/CollisionShape3D:disabled")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.06666667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "values": [{
