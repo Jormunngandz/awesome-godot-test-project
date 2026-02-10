@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var collision_crouch: CollisionShape3D = $Collision_Crouch
 @onready var collision_stand: CollisionShape3D = $Collision_Stand
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
+@onready var ray_cast_target: RayCast3D = %RayCastTarget
 
 
 
@@ -20,6 +21,7 @@ const MOUSE_SENS =0.4
 var current_speed : float = 5.0
 var Lerp_Speed = 10
 var direction = Vector3.ZERO
+var current_target
 
 #state machine
 var Walking : bool =false
@@ -70,7 +72,7 @@ func _physics_process(delta: float) -> void:
 		
 		Crouching =false
 		Sliding = false
-	if Input.is_action_just_pressed("Sprint"):
+	if Input.is_action_just_pressed("Sprint") and Globals.player_stamina > 0:
 		Walking =false
 		Sprinting =true
 		Crouching =false
@@ -97,6 +99,7 @@ func _physics_process(delta: float) -> void:
 		head.position.y =  lerp(head.position.y,1.0,delta*Lerp_Speed)
 		collision_stand.disabled = true
 		collision_crouch.disabled = false
+		
 #этот кусок кода востанавливает скорость ходьбы после бега. не логично. надо бы его отдельно вынести 
 	elif !ray_cast_3d.is_colliding() and !Crouching:
 		
@@ -107,9 +110,14 @@ func _physics_process(delta: float) -> void:
 	#логика бега
 	if  Sprinting:
 		current_speed = lerp(current_speed,SPRINTING_SPEED,delta*Lerp_Speed)
+		Globals.player_stamina -= 1.0 if Globals.player_stamina > 80.0 else 0.1
+		if Globals.player_stamina == 0:
+			Sprinting = false
+			Walking = true
 		
 		#нормализация скорости ходьбы
 	if Walking:
+		Globals.player_stamina += 1
 		current_speed = lerp(current_speed,WALKING_SPEED,delta*Lerp_Speed)
 
 #Sliding logic
@@ -129,6 +137,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	Messager.new_enemy_spotted.emit(ray_cast_target.get_collider())
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#высота прыжка зависит от скорости 

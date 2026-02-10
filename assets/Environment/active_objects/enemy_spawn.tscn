@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh17fnl68oioa"]
 
-[ext_resource type="Script" uid="uid://bkypnprs8dvx5" path="res://assets/Environment/active_objects/enemy_spawn.gd" id="1_uewyn"]
+[ext_resource type="Script" uid="uid://bkypnprs8dvx5" path="res://src/environment/enemy_spawn.gd" id="1_uewyn"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jjcb0"]
 top_radius = 2.0

@@ -5,74 +5,52 @@ extends Node3D
 @onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 @onready var gpu_particles_3d: GPUParticles3D = $Area3D/GPUParticles3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-
+@onready var self_destruct_timer: Timer = %SelfDestructTimer
 
 var speed=10
 var damage = 10
 var live_time = 3
-var is_dying :bool =false
-func _ready():
-	pass#gpu_particles_3d.
-	
+var is_dying: bool = false
 func _physics_process(delta):
 	position += transform.basis * Vector3(0,speed,0) * delta
-	#таймер жизни снаряда
-	await get_tree().create_timer(live_time).timeout
-	SelfDestruct()
-
-func SelfDestruct():
-	if is_dying == false:
-		is_dying = true
-		queue_free()
-		
-func Damage_Destruct():
-	#Функция униxтожения снаряда при столкновении
-	#проверка отсутствия одновременного умирания. на случай рахных анимаций в разных условиях
-	if is_dying == false:
-		is_dying = true
-			#удаляем колизию и модельку 
-		animation_player.play("Hit")
-		#skull.visible = false
-		##партикли взрыв
-		#gpu_particles_3d.emitting = true
-		#включаем звук. проверка что звука нет
-		
-
-		#await animation_player.animation_finished
-	#уничтожаем снаряд 
-		#queue_free()
-		print("череп удален")
 
 
+func hit(hitted_obj: Node3D):
+	set_player_sound(hitted_obj)
+	animation_player.play("Hit")
+	await  animation_player.animation_finished
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	Damage_Destruct()
+#func _on_area_3d_body_entered(body: Node3D) -> void:
+	#hit(body)
+	#if body.has_method("hit"):
+		#body.hit(self, body)
 	
-	surface_sound(body)
-	
-	
-	#print("череп столкнулся c телом") 
-
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	Damage_Destruct()
-	audio_stream_player_3d.stream = load("res://assets/Environment/materials/materials sound/Soft Body Impact.mp3")
-	audio_stream_player_3d.play()
-	print("звук мяса")
-	#print("череп столкнулся c зоной") 
+	hit(area)
+	if area.get_parent().has_method("hit"):
+		area.get_parent().hit(self, area)
 	
-func surface_sound(body: Node3D):
-	if body.is_in_group("metal_object"):
-		audio_stream_player_3d.stream = load("res://assets/Environment/materials/materials sound/Metal_Hit.mp3")
-		audio_stream_player_3d.play()
-		print("звук метала")
-	elif body.is_in_group("wood_object"):
-		audio_stream_player_3d.stream = load("res://assets/Environment/materials/materials sound/Wood_Hit.mp3")
-		audio_stream_player_3d.play()
-		print("звук дерева")
+	
+func set_player_sound(obj: Node3D):
+	if obj.is_in_group("metal_object"):
+		audio_stream_player_3d.stream = load("res://assets/sounds/materials sound/Metal_Hit.mp3")
+	elif obj.is_in_group("wood_object"):
+		audio_stream_player_3d.stream = load("res://assets/sounds/materials sound/Wood_Hit.mp3")
+	elif obj.is_in_group("Enemy"):
+		audio_stream_player_3d.stream = load("res://assets/sounds/materials sound/Soft Body Impact.mp3")
 	else:
-		audio_stream_player_3d.stream = load("res://assets/weapon/skull_gun/xbow_hitbod2.wav")
-		audio_stream_player_3d.play()
-		print("звук просто")
+		audio_stream_player_3d.stream = load("res://assets/sounds/materials sound/default_hit.wav")
+	audio_stream_player_3d.play()
+
+
+func _on_self_destruct_timer_timeout() -> void:
+	queue_free()
+
+
+func _on_area_3d_body_shape_entered(_body_rid: RID, body: Node3D, body_shape_index: int, _local_shape_index: int) -> void:
+	hit(body)
+	if body.has_method("hit"):
+		var collision_part: CollisionShape3D = body.find_children("CollisionShape3D*")[body_shape_index]
+		body.hit(self, collision_part)

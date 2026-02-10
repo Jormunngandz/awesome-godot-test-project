@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dy6qkh2rey20c"]
+
+[ext_resource type="Texture2D" uid="uid://dfjrlqxeobiar" path="res://icon.svg" id="1_mg3ru"]
+[ext_resource type="Script" uid="uid://7i5ojxxwv7bp" path="res://src/gui/hud.gd" id="1_tmoq3"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1596011965]
+script = ExtResource("1_tmoq3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1706121098]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=517485694]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HPBar" type="ProgressBar" parent="VBoxContainer/VBoxContainer" unique_id=1761726804]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+step = 1.0
+value = 100.0
+
+[node name="StaminaBar" type="ProgressBar" parent="VBoxContainer/VBoxContainer" unique_id=1547059818]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+step = 0.1
+value = 100.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=1262199492]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=1181616362]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_mg3ru")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=349502194]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_mg3ru")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=1084189928]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_mg3ru")
+
+[node name="TextureRect4" type="TextureRect" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=399386317]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_mg3ru")
+
+[node name="PanelContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2140688176]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Consumable" type="Label" parent="VBoxContainer/PanelContainer" unique_id=1367262853]
+layout_mode = 2
+text = "Consumable name"
+
+[node name="EnemyBox" type="VBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=2069688477]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="EnemyNameLabel" type="Label" parent="VBoxContainer/PanelContainer/EnemyBox" unique_id=2115131514]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Test enemy"
+horizontal_alignment = 1
+
+[node name="EnemyHPBar" type="ProgressBar" parent="VBoxContainer/PanelContainer/EnemyBox" unique_id=1110253554]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HideEBTimer" type="Timer" parent="VBoxContainer/PanelContainer/EnemyBox" unique_id=1282468663]
+unique_name_in_owner = true
+wait_time = 5.0
+
+[connection signal="timeout" from="VBoxContainer/PanelContainer/EnemyBox/HideEBTimer" to="." method="_on_hide_eb_timer_timeout"]

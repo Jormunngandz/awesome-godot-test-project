@@ -4,12 +4,12 @@ extends Node3D
 var intensity = 10
 
 func _ready() -> void:
-	pot_broken.set_process_mode(4)
+	pot_broken.set_process_mode(PROCESS_MODE_DISABLED)
 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	pot_broken.visible = true
-	pot_broken.set_process_mode(0)
+	pot_broken.set_process_mode(PROCESS_MODE_INHERIT)
 	pot_solid.visible = false
 	
 	brokening((global_position -area.global_position).normalized()*area.get_parent().speed)

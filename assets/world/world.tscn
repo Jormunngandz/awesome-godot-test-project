@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ckq22x8p63pig"]
 
 [ext_resource type="Material" uid="uid://bmi3jp6fbrd7v" path="res://assets/world/word_base_grid_material.tres" id="1_t3mbi"]
-[ext_resource type="PackedScene" uid="uid://bh17fnl68oioa" path="res://assets/Environment/active_objects/enemy_spawn.tscn" id="3_aekxa"]
-[ext_resource type="PackedScene" uid="uid://chlj0ex63ecea" path="res://assets/Environment/active_objects/Pot/pot.tscn" id="3_hukdr"]
+[ext_resource type="PackedScene" uid="uid://bh17fnl68oioa" path="res://assets/environment/active_objects/enemy_spawn.tscn" id="3_aekxa"]
+[ext_resource type="PackedScene" uid="uid://chlj0ex63ecea" path="res://assets/environment/active_objects/pot/pot.tscn" id="3_hukdr"]
 [ext_resource type="PackedScene" uid="uid://dxeileh2tvous" path="res://assets/player/player.tscn" id="3_r2l5x"]
 [ext_resource type="Texture2D" uid="uid://nra8ho4ys3pc" path="res://assets/world/world_skybox.hdr" id="4_hukdr"]
-[ext_resource type="Material" uid="uid://do3n3x4ma7ll2" path="res://assets/Environment/materials/Metal.tres" id="6_r2l5x"]
-[ext_resource type="Material" uid="uid://beppg3gwn82p3" path="res://assets/Environment/materials/Wood.tres" id="7_hukdr"]
+[ext_resource type="Material" uid="uid://do3n3x4ma7ll2" path="res://assets/textures/Metal.tres" id="6_r2l5x"]
+[ext_resource type="Material" uid="uid://beppg3gwn82p3" path="res://assets/textures/Wood.tres" id="7_hukdr"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_k0juu"]
 vertices = PackedVector3Array(-24.535, -1.0894068, -62.988747, -24.535, -1.0894068, -25.788746, 14.865002, -1.0894068, -25.788746, 14.865002, -1.0894068, -62.988747, 65.465, 0.6205931, -48.988747, 64.265, 0.6205931, -52.788746, 63.665005, 0.6205931, -52.788746, 24.065002, 0.6205931, -40.388744, 24.665, 0.6205931, -35.988747, 64.66501, 0.6205931, -48.388744, 18.265, 0.6205931, -35.588745, 18.465, 0.6205931, -34.388744, 19.665, 0.6205931, -33.988747, 16.665, 0.6205931, -37.588745, 17.265, 0.6205931, -36.388744, 20.465, 0.6205931, -39.588745, 19.665, 0.6205931, -40.388744, 21.665, 0.6205931, -39.588745, 24.465, 0.6205931, -35.388744, 40.065, 0.6205931, -11.988743, 44.865, 0.6205931, -13.188744, -11.135, 0.5105932, -13.188744, -10.535, 0.65059304, -13.388744, -10.535, 0.5105932, -24.588745, -10.535, 0.5105932, -14.508743, -24.535, 0.5105932, -5.588745, -11.135, 0.5105932, -5.588745, -24.535, 0.5105932, -24.588745, -0.93499947, 0.5105932, -13.188744, -0.53499985, 0.5105932, -14.188744, -1.1350002, 0.5105932, -14.588745, -2.1350002, 0.7105932, -13.188744, -1.5349998, 0.5105932, -13.188744, -1.6350002, 0.5105932, -13.888744, -9.934999, 0.7105932, -13.188744, -1.1350002, 0.5105932, -18.188744, 0.065000534, 0.5105932, -24.588745, -1.9349995, 0.5105932, -14.188744, -9.542526, 0.5105932, -14.378052, 0.065000534, 0.5105932, -18.588745, -9.934999, 1.1105931, -11.788746, -2.1350002, 1.1105931, -11.788746, -9.934999, 0.88059306, -12.488747, -2.1350002, 0.88059306, -12.488747, 23.265, 0.5105932, -5.1887436, 23.265, 0.5105932, -3.588745, 24.465, 0.5105932, -3.588745, 24.465, 0.680593, -6.588745, 23.865002, 0.5105932, -5.8887444, 24.465, 0.5105932, -5.588745, 22.865002, 0.5105932, -5.588745, 24.465, 0.680593, -11.588745, 24.465, 0.5105932, -24.588745, 1.2650013, 0.5105932, -18.188744, 1.2650013, 0.5105932, -14.588745, 7.7450027, 0.5105932, -11.888744, 8.825001, 0.680593, -11.438744, 20.705002, 0.680593, -6.4887466, 21.785, 0.5105932, -6.038746, 23.131668, 0.680593, -6.588745, 24.465, 0.5105932, -12.770561, 22.850285, 0.680593, -10.799717, 9.650089, 0.5105932, -11.97551, 13.266209, 0.680593, -10.790031, 14.482128, 0.5105932, -11.9803505, 15.682228, 0.680593, -10.772453, 22.878197, 0.5105932, -11.998825, 23.665, 0.5105932, -6.088745, 0.8649998, 0.5105932, -14.188744, -0.93499947, 0.5105932, -5.588745, 24.865002, 0.680593, -6.988743, 24.865002, 0.680593, -11.188744, 26.265, 0.680593, -6.988743, 26.265, 0.680593, -11.188744, 1.265049, 0.680593, -10.804794, 1.2733002, 0.680593, -7.176262, 6.0570908, 0.680593, -10.769634, 3.6490307, 0.5105932, -11.982372, 1.2730122, 0.5105932, -11.999954, 3.6810684, 0.680593, -10.787212, 39.665005, 0.680593, -11.188744, 38.465, 0.680593, -11.188744, 38.665005, 0.680593, -6.988743, 45.065, 0.6205931, -12.988743, 44.465, 0.680593, -6.988743, 44.865, 0.680593, -10.988743, 44.965, 0.6205931, -11.988743, 43.245007, 0.6205931, -12.008743, 43.249035, 0.680593, -10.7823715, 50.065, 0.680593, -7.588745, 49.865, 0.680593, -11.188744, 46.865, 0.680593, -11.188744, 45.265003, 0.680593, -6.3887444, 46.265003, 0.680593, -11.788742, 45.664997, 0.6205931, -12.388744, 46.225002, 0.680593, -6.628746, -9.934999, 2.710593, -6.1887436, -2.1350002, 2.710593, -6.1887436, -9.934999, 1.400593, -10.668747, -9.934999, 1.7405932, -9.548744, -9.934999, 2.0305932, -8.428745, -2.1350002, 2.0305932, -8.428745, -2.1350002, 1.7405932, -9.548744, -2.1350002, 1.400593, -10.668747, -3.5228653, 2.0805929, -8.405689, -8.354902, 2.0805929, -8.400848, 50.065, 0.6205931, -1.3887444, 53.065, 0.6205931, -4.1887436, 53.065, 0.6205931, -4.588745, 50.815, 0.6205931, -6.838745, 46.845005, 0.6205931, -6.0087433, -2.1350002, 3.0105932, -4.788746, -9.934999, 3.0105932, -4.788746, -2.1350002, 2.880593, -5.4887466, -9.934999, 2.880593, -5.4887466, -10.334999, 3.0105932, -4.3887444, -26.935, 3.0105932, -4.3887444, -26.935, 3.0105932, 44.411255, -1.7349987, 3.0105932, -4.3887444, 21.865002, 3.0105932, 44.411255, 21.865002, 3.0105932, -4.3887444, 23.265, 0.5105932, 24.411255, 24.465, 0.5105932, 24.411255)
@@ -26,7 +26,7 @@ sky = SubResource("Sky_3j1bo")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="World" type="Node3D" unique_id=422376778]
+[node name="World" type="Node3D" unique_id=422376778 groups=["World"]]
 
 [node name="Surfaces" type="Node3D" parent="." unique_id=827204270]
 
@@ -103,21 +103,21 @@ environment = SubResource("Environment_58dq4")
 [node name="Pots" type="Node3D" parent="." unique_id=467624202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23819542, 3.25, 4.888485)
 
-[node name="Pot_cell" parent="Pots" unique_id=701840727 instance=ExtResource("3_hukdr")]
+[node name="Pot_cell" parent="Pots" unique_id=1405896602 instance=ExtResource("3_hukdr")]
 
-[node name="Pot_cell2" parent="Pots" unique_id=1815893925 instance=ExtResource("3_hukdr")]
+[node name="Pot_cell2" parent="Pots" unique_id=795154508 instance=ExtResource("3_hukdr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.797121, 0, 0.8624716)
 
-[node name="Pot_cell3" parent="Pots" unique_id=872410917 instance=ExtResource("3_hukdr")]
+[node name="Pot_cell3" parent="Pots" unique_id=82714608 instance=ExtResource("3_hukdr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.179267, 0, -2.6092896)
 
-[node name="Pot_cell4" parent="Pots" unique_id=1405896602 instance=ExtResource("3_hukdr")]
+[node name="Pot_cell4" parent="Pots" unique_id=1751333052 instance=ExtResource("3_hukdr")]
 transform = Transform3D(0.88225013, 0, -0.47078094, 0, 1, 0, 0.47078094, 0, 0.88225013, 0.70844364, 0, -3.1488664)
 
-[node name="Pot_cell5" parent="Pots" unique_id=1371133638 instance=ExtResource("3_hukdr")]
+[node name="Pot_cell5" parent="Pots" unique_id=788311633 instance=ExtResource("3_hukdr")]
 transform = Transform3D(0.88225013, 0, -0.47078094, 0, 1, 0, 0.47078094, 0, 0.88225013, 2.274437, 0, 1.1399798)
 
-[node name="Pot_cell6" parent="Pots" unique_id=2018907000 instance=ExtResource("3_hukdr")]
+[node name="Pot_cell6" parent="Pots" unique_id=1881699260 instance=ExtResource("3_hukdr")]
 transform = Transform3D(0.88225013, 0, -0.47078094, 0, 1, 0, 0.47078094, 0, 0.88225013, 5.1673985, 0, -0.8449149)
 
 [node name="Sound test" type="Node3D" parent="." unique_id=1953127402]
@@ -139,3 +139,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.491611, 6.8006554, 15.276
 use_collision = true
 size = Vector3(1, 10, 5.9158936)
 material = ExtResource("7_hukdr")
+
+[node name="Enemies" type="Node" parent="." unique_id=1553853881]

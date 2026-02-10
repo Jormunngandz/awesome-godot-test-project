@@ -16,7 +16,7 @@ func initialize():
 func _ready() -> void:
 	pass
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("Attack"):
 		
 		Skull_instance = bullet.instantiate()
@@ -24,6 +24,6 @@ func _physics_process(delta):
 		Skull_instance.position = marker_3d_muzzle.global_position
 		Skull_instance.transform.basis = marker_3d_muzzle.global_transform.basis
 		get_tree().root.add_child(Skull_instance)
-		audio_stream_player_3d.play()
+		#audio_stream_player_3d.play()
 		#print("вызываю череп")
 		

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://beppg3gwn82p3"]
 
-[ext_resource type="Texture2D" uid="uid://bcbu8y4on0h87" path="res://assets/Environment/materials/texture_cartoon_wood__myarchitectai_1770658098209.jpg" id="1_jh37q"]
+[ext_resource type="Texture2D" uid="uid://bcbu8y4on0h87" path="res://assets/textures/texture_cartoon_wood.jpg" id="1_jh37q"]
 
 [resource]
 albedo_color = Color(0.49747366, 0.49747366, 0.49747366, 1)

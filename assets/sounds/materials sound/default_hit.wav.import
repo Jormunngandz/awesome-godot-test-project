@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://0c3obg3w286d"
-path="res://.godot/imported/xbow_hitbod2.wav-0523d6754069b963143ce7dd5d0fc661.sample"
+path="res://.godot/imported/default_hit.wav-5834e8d589972063d7c7861c5b025887.sample"
 
 [deps]
 
-source_file="res://assets/weapon/skull_gun/xbow_hitbod2.wav"
-dest_files=["res://.godot/imported/xbow_hitbod2.wav-0523d6754069b963143ce7dd5d0fc661.sample"]
+source_file="res://assets/sounds/materials sound/default_hit.wav"
+dest_files=["res://.godot/imported/default_hit.wav-5834e8d589972063d7c7861c5b025887.sample"]
 
 [params]
 
