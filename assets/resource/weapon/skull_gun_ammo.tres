@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AmmoData" format=3 uid="uid://7qrhpht8gqj6"]
+
+[ext_resource type="Script" uid="uid://bteee8c3q8knx" path="res://src/items/ammo_data.gd" id="1_eokb2"]
+
+[resource]
+script = ExtResource("1_eokb2")
+name = "skull_gun_ammo"
+value = 15
+metadata/_custom_type_script = "uid://bteee8c3q8knx"

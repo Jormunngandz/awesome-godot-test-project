@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var collision_stand: CollisionShape3D = $Collision_Stand
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 @onready var ray_cast_target: RayCast3D = %RayCastTarget
+@onready var arm: Node3D = %ARM
 
 
 

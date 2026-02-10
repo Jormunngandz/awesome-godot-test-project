@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnnrewvgtb2hw"]
 
 [ext_resource type="Script" uid="uid://6h205kdh4as8" path="res://src/dummy.gd" id="1_17pi3"]
-[ext_resource type="Resource" uid="uid://bl00ml2dfoa0k" path="res://assets/npc/enemies/dummy.tres" id="2_fmhme"]
+[ext_resource type="Resource" uid="uid://bl00ml2dfoa0k" path="res://assets/resource/npc/enemies/dummy.tres" id="2_fmhme"]
 [ext_resource type="PackedScene" uid="uid://4khhdj8cyyps" path="res://assets/npc/enemies/dummy.glb" id="2_ioovt"]
 [ext_resource type="AudioStream" uid="uid://b5eshwbt232j1" path="res://assets/npc/enemies/sprj_c1000#1 (born_01).wav" id="3_ljk0a"]
 

@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://cikuqd70uc32t"]
 
 [ext_resource type="PackedScene" uid="uid://qbs4lsncjwls" path="res://assets/weapon/skull_gun/skull_gun.fbx" id="1_3qdco"]
-[ext_resource type="Script" uid="uid://bjun4swgvbmlt" path="res://src/weapon/skull_gun.gd" id="1_tyg1p"]
+[ext_resource type="Script" uid="uid://bjun4swgvbmlt" path="res://src/weapon/skull_gun/skull_gun.gd" id="1_tyg1p"]
+[ext_resource type="Resource" uid="uid://bi8djjtxrwrst" path="res://assets/resource/weapon/skull_gun.tres" id="2_b8cwk"]
 [ext_resource type="PackedScene" uid="uid://h2vvil7mnlur" path="res://assets/weapon/skull_gun/skull.fbx" id="2_tyg1p"]
 [ext_resource type="AudioStream" uid="uid://bos1p62peobp5" path="res://assets/weapon/skull_gun/skull_gun_shot.wav" id="4_yed87"]
 
-[node name="Weapon" type="Node3D" unique_id=1984290331]
+[node name="SkullGun" type="Node3D" unique_id=1984290331 node_paths=PackedStringArray("marker_3d_muzzle", "audio_stream_player_3d")]
 script = ExtResource("1_tyg1p")
+marker_3d_muzzle = NodePath("Marker3D_muzzle")
+audio_stream_player_3d = NodePath("AudioStreamPlayer3D")
+base_weapon_stats = ExtResource("2_b8cwk")
 
-[node name="Weapon" parent="." unique_id=954742622 instance=ExtResource("1_3qdco")]
+[node name="Gun" parent="." unique_id=954742622 instance=ExtResource("1_3qdco")]
 
 [node name="Skull" parent="." unique_id=233544053 instance=ExtResource("2_tyg1p")]
 transform = Transform3D(-0.7198947, -0.36095482, 0.59284335, 0.04941013, 0.82532054, 0.5624986, -0.6923223, 0.43423223, -0.576309, -0.09331432, -0.16698295, 0.4426114)

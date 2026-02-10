@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cn5vip5q6eoul"]
+
+[ext_resource type="Script" uid="uid://c3lurvf0qhsi5" path="res://src/items/pickups/skull_gun_ammo.gd" id="1_6wfsl"]
+[ext_resource type="PackedScene" uid="uid://bcmw6a3ti1vmv" path="res://assets/pickups/skull_gun_ammo.glb" id="1_lg3em"]
+[ext_resource type="Resource" uid="uid://7qrhpht8gqj6" path="res://assets/resource/weapon/skull_gun_ammo.tres" id="2_borpb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_borpb"]
+height = 1.1462402
+radius = 0.3881836
+
+[node name="SkullGunAmmo" type="Node3D" unique_id=2059721722]
+transform = Transform3D(1, 0, 0, 0, 0.99026805, -0.1391731, 0, 0.1391731, 0.99026805, 0, 0, 0)
+script = ExtResource("1_6wfsl")
+stats = ExtResource("2_borpb")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=366944802]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1832668662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63239205, 0)
+shape = SubResource("CylinderShape3D_borpb")
+
+[node name="skull_gun_ammo_model" parent="." unique_id=2047530569 instance=ExtResource("1_lg3em")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6021175, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2037190707]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
