@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://bwe87gcbol6vv"]
+
+[ext_resource type="AudioStream" uid="uid://0c3obg3w286d" path="res://assets/sounds/materials sound/default_hit.wav" id="1_c6tac"]
+[ext_resource type="AudioStream" uid="uid://djyn8cwfb7npu" path="res://assets/sounds/materials sound/Soft Body Impact.mp3" id="2_orlmg"]
+[ext_resource type="AudioStream" uid="uid://uiw8sypohw4s" path="res://assets/sounds/materials sound/Metal_Hit.mp3" id="3_pq6oy"]
+[ext_resource type="Script" uid="uid://cvmsdagt016om" path="res://src/weapon/projectile_data.gd" id="4_gbmvi"]
+[ext_resource type="AudioStream" uid="uid://dtqn55g14hnsl" path="res://assets/sounds/materials sound/Wood_Hit.mp3" id="5_ykbbq"]
+
+[resource]
+script = ExtResource("4_gbmvi")
+speed = 15.0
+base_hit_sound = ExtResource("1_c6tac")
+metal_hit = ExtResource("3_pq6oy")
+wood_hit = ExtResource("5_ykbbq")
+body_hit = ExtResource("2_orlmg")
+metadata/_custom_type_script = "uid://cvmsdagt016om"

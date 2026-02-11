@@ -1,4 +1,4 @@
-class_name BaseWeapon extends Resource
+class_name WeaponData extends Resource
 
 @export var base_damage:int = 20
 @export var base_range:int = 1000

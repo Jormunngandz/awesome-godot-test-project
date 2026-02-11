@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dyary6rftrc2d"]
 
-[ext_resource type="Script" uid="uid://djyvjackcft4h" path="res://src/weapon/skull_gun/skull_gun_projectile.gd" id="1_62m5x"]
+[ext_resource type="Script" uid="uid://djyvjackcft4h" path="res://src/weapon/projectile.gd" id="1_62m5x"]
 [ext_resource type="PackedScene" uid="uid://h2vvil7mnlur" path="res://assets/weapon/skull_gun/skull.fbx" id="1_bscid"]
+[ext_resource type="ArrayMesh" uid="uid://bpr486qdlmsaj" path="res://assets/weapon/skull_gun/skull_mesh.tres" id="2_itcdx"]
+[ext_resource type="Resource" uid="uid://bwe87gcbol6vv" path="res://assets/weapon/skull_gun/skull_gun_projectile/skull_projectile_stats.tres" id="3_s6hyj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8881f"]
 size = Vector3(0.3, 0.3, 0.3)
@@ -120,8 +122,15 @@ _data = {
 &"RESET": SubResource("Animation_itcdx")
 }
 
-[node name="Projectile_Skull" type="Node3D" unique_id=1103673876]
+[node name="Projectile_Skull" type="Node3D" unique_id=1103673876 node_paths=PackedStringArray("audio_player", "shape", "contact_area", "on_hit_particles", "animation_player")]
 script = ExtResource("1_62m5x")
+audio_player = NodePath("Area3D/AudioStreamPlayer3D")
+projectile_model = ExtResource("2_itcdx")
+shape = NodePath("Area3D/CollisionShape3D")
+contact_area = NodePath("Area3D")
+on_hit_particles = NodePath("Area3D/GPUParticles3D")
+animation_player = NodePath("AnimationPlayer")
+projectile_data = ExtResource("3_s6hyj")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=113057594]
 
@@ -147,13 +156,3 @@ draw_pass_1 = SubResource("BoxMesh_wtdjm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1305292161]
 libraries/ = SubResource("AnimationLibrary_s6hyj")
-
-[node name="SelfDestructTimer" type="Timer" parent="." unique_id=1095538498]
-unique_name_in_owner = true
-wait_time = 3.0
-autostart = true
-
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
-[connection signal="timeout" from="SelfDestructTimer" to="." method="_on_self_destruct_timer_timeout"]

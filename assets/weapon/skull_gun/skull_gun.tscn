@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://cikuqd70uc32t"]
 
 [ext_resource type="PackedScene" uid="uid://qbs4lsncjwls" path="res://assets/weapon/skull_gun/skull_gun.fbx" id="1_3qdco"]
-[ext_resource type="Script" uid="uid://bjun4swgvbmlt" path="res://src/weapon/skull_gun/skull_gun.gd" id="1_tyg1p"]
-[ext_resource type="Resource" uid="uid://bi8djjtxrwrst" path="res://assets/resource/weapon/skull_gun.tres" id="2_b8cwk"]
+[ext_resource type="Script" uid="uid://1w4m2ehrd5ex" path="res://src/weapon/fire_weapon.gd" id="1_b8cwk"]
+[ext_resource type="Resource" uid="uid://b4kt5vhcdwtya" path="res://assets/weapon/skull_gun/skull_gun.tres" id="2_6ndle"]
 [ext_resource type="PackedScene" uid="uid://h2vvil7mnlur" path="res://assets/weapon/skull_gun/skull.fbx" id="2_tyg1p"]
+[ext_resource type="PackedScene" uid="uid://dyary6rftrc2d" path="res://assets/weapon/skull_gun/skull_gun_projectile/skull_gun_projectile.tscn" id="3_6ndle"]
 [ext_resource type="AudioStream" uid="uid://bos1p62peobp5" path="res://assets/weapon/skull_gun/skull_gun_shot.wav" id="4_yed87"]
 
-[node name="SkullGun" type="Node3D" unique_id=1984290331 node_paths=PackedStringArray("marker_3d_muzzle", "audio_stream_player_3d")]
-script = ExtResource("1_tyg1p")
-marker_3d_muzzle = NodePath("Marker3D_muzzle")
-audio_stream_player_3d = NodePath("AudioStreamPlayer3D")
-base_weapon_stats = ExtResource("2_b8cwk")
+[node name="SkullGun" type="Node3D" unique_id=1984290331 node_paths=PackedStringArray("muzzle", "audio_player")]
+script = ExtResource("1_b8cwk")
+muzzle = NodePath("Marker3D_muzzle")
+audio_player = NodePath("AudioStreamPlayer3D")
+weapon_data = ExtResource("2_6ndle")
+projectile_model = ExtResource("3_6ndle")
 
 [node name="Gun" parent="." unique_id=954742622 instance=ExtResource("1_3qdco")]
 

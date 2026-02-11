@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="BaseWeapon" format=3 uid="uid://bi8djjtxrwrst"]
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b4kt5vhcdwtya"]
 
 [ext_resource type="Script" uid="uid://b021214suuy55" path="res://src/weapon/weapon_data.gd" id="1_v1jop"]
 
 [resource]
 script = ExtResource("1_v1jop")
-name = "skullgun"
+name = "skull_gun"
 metadata/_custom_type_script = "uid://b021214suuy55"
