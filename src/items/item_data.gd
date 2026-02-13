@@ -1,4 +1,4 @@
-class_name ItemData extends Resource
+class_name BasePickupData extends Resource
 
 
 @export_group("Item Details")
@@ -13,5 +13,5 @@ class_name ItemData extends Resource
 #@export var model: ArrayMesh
 
 # Placeholder function - children will define behavior
-func use(_target):
+func pick(_target):
 	print(self, ": Used")

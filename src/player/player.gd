@@ -30,7 +30,7 @@ var Slide_Speed = 30
 func _ready() -> void:
 	# отключаем курсор мыши 
 	Globals.player = self
-	switch_weapon.connect(weapon_manager.switch_weapon)
+	#switch_weapon.connect(weapon_manager.switch_weapon)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):

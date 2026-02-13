@@ -1,12 +1,46 @@
 [gd_scene format=3 uid="uid://dxeileh2tvous"]
 
 [ext_resource type="Script" uid="uid://bc730vf4meud6" path="res://src/player/player.gd" id="1_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://cikuqd70uc32t" path="res://assets/weapon/skull_gun/skull_gun.tscn" id="2_btcbx"]
 [ext_resource type="Script" uid="uid://c786x1bv4vjbw" path="res://src/player/player_data.gd" id="2_v2miy"]
-[ext_resource type="Script" uid="uid://bsowf7i6lfddv" path="res://src/player/weapon_manager.gd" id="3_v2miy"]
 
 [sub_resource type="Resource" id="Resource_ouxva"]
 script = ExtResource("2_v2miy")
 metadata/_custom_type_script = "uid://c786x1bv4vjbw"
+
+[sub_resource type="GDScript" id="GDScript_v2miy"]
+script/source = "class_name WeaponManager extends Node3D
+
+var weapon_list = []
+var equiped_weapon: Node3D
+
+func _ready() -> void:
+	Globals.pick_up_weapon.connect(obtain_weapon)
+
+
+
+func obtain_weapon(new_weapon: WeaponData):
+	var arm: Node3D = Globals.player.arm
+	var weapon_model = new_weapon.weapon_scene.instantiate()
+	arm.add_child(weapon_model)
+
+
+func switch_weapon(direction: String):
+	if direction == \"next\":
+		var arm: Node3D = Globals.player.arm
+		arm.get_child(0).queue_free()
+		
+
+func weapon_attack():
+	pass
+	
+func weapon_reload():
+	pass
+"
+
+[sub_resource type="Resource" id="Resource_d5dr7"]
+script = SubResource("GDScript_v2miy")
+metadata/_custom_type_script = "uid://cf2v1fyaag32v"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q3lat"]
 
@@ -15,11 +49,11 @@ height = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ddoul"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=198275142 node_paths=PackedStringArray("weapon_manager")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=198275142]
 collision_layer = 3
 script = ExtResource("1_4ntmi")
 player_data = SubResource("Resource_ouxva")
-weapon_manager = NodePath("WeaponManager")
+weapon_manager = SubResource("Resource_d5dr7")
 
 [node name="Collision_Stand" type="CollisionShape3D" parent="." unique_id=1336427990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -41,7 +75,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0)
 
 [node name="ARM" type="Node3D" parent="Head/Character_Camera3D" unique_id=12890529]
 unique_name_in_owner = true
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.613, -0.405, -0.773)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.613, -0.405, -0.773)
+
+[node name="Weapon" parent="Head/Character_Camera3D/ARM" unique_id=1984290331 instance=ExtResource("2_btcbx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.18, -0.06, -0.18)
 
 [node name="RayCastTarget" type="RayCast3D" parent="Head" unique_id=608480924]
 unique_name_in_owner = true
@@ -49,7 +86,3 @@ transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=474224447]
 transform = Transform3D(2, 0, 0, 0, -2, 3.019916e-07, 0, -3.019916e-07, -2, 0, 0, 0)
-
-[node name="WeaponManager" type="Node3D" parent="." unique_id=368278581]
-script = ExtResource("3_v2miy")
-metadata/_custom_type_script = "uid://bsowf7i6lfddv"

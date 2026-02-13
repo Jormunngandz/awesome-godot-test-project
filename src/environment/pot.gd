@@ -8,11 +8,13 @@ func _ready() -> void:
 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	pot_broken.visible = true
-	pot_broken.set_process_mode(PROCESS_MODE_INHERIT)
-	pot_solid.visible = false
 	
-	brokening((global_position -area.global_position).normalized()*area.get_parent().speed)
+	var projectile = area.get_parent()
+	if is_instance_of(projectile, Projectile):
+		pot_broken.visible = true
+		pot_broken.set_process_mode(PROCESS_MODE_INHERIT)
+		pot_solid.visible = false
+		brokening((global_position -area.global_position).normalized()*projectile.projectile_data.speed)
 
 #func _on_area_3d_body_entered(body: Node3D) -> void:
 	#pot_broken.visible = true

@@ -43,7 +43,7 @@ func dead():
 	
 func hit(projectile: Projectile, damaged_part: Node3D):
 	var multi_dmg: float = damaged_part.get_meta("dmg_mul", 1.0)
-	stats.hp -= projectile.damage * multi_dmg
+	stats.hp -= projectile.projectile_data.damage * multi_dmg
 	label_3d.text = str(stats.hp)
 	if stats.hp <=0:
 		dead()

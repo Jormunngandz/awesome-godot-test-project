@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AmmoPickupData" format=3 uid="uid://bv2j5ob75k3ms"]
+
+[ext_resource type="Script" uid="uid://bteee8c3q8knx" path="res://src/items/ammo_data.gd" id="1_uhjx1"]
+
+[resource]
+script = ExtResource("1_uhjx1")
+name = "skullgunammo"
+value = 6
+stackable = true
+metadata/_custom_type_script = "uid://bteee8c3q8knx"

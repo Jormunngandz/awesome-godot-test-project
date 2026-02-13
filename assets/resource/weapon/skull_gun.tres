@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="BaseWeapon" format=3 uid="uid://bi8djjtxrwrst"]
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bi8djjtxrwrst"]
 
 [ext_resource type="Script" uid="uid://b021214suuy55" path="res://src/weapon/weapon_data.gd" id="1_v1jop"]
+[ext_resource type="PackedScene" uid="uid://cikuqd70uc32t" path="res://assets/weapon/skull_gun/skull_gun.tscn" id="2_ns477"]
 
 [resource]
 script = ExtResource("1_v1jop")
+weapon_scene = ExtResource("2_ns477")
 name = "skullgun"
 metadata/_custom_type_script = "uid://b021214suuy55"

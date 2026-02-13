@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bcmw6a3ti1vmv"
-path="res://.godot/imported/skull_gun_ammo.glb-2de86c2c274ae19bfffd5e29193d8614.scn"
+path="res://.godot/imported/skull_gun_ammo.glb-eb548dd607f3990700016b4013965c9b.scn"
 
 [deps]
 
-source_file="res://assets/pickups/skull_gun_ammo.glb"
-dest_files=["res://.godot/imported/skull_gun_ammo.glb-2de86c2c274ae19bfffd5e29193d8614.scn"]
+source_file="res://assets/pickups/skull_gun_ammo/skull_gun_ammo.glb"
+dest_files=["res://.godot/imported/skull_gun_ammo.glb-eb548dd607f3990700016b4013965c9b.scn"]
 
 [params]
 
