@@ -1,5 +1,6 @@
 extends Node
 signal stat_change
+var player:CharacterBody3D
 var player_heal:float = 100.0:
 	set(value):
 		player_heal = value

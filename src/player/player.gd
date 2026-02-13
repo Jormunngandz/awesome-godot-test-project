@@ -1,4 +1,5 @@
 extends CharacterBody3D
+signal switch_weapon
 
 @onready var head: Node3D = $Head
 @onready var character_camera_3d: Camera3D = $Head/Character_Camera3D
@@ -7,17 +8,8 @@ extends CharacterBody3D
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 @onready var ray_cast_target: RayCast3D = %RayCastTarget
 @onready var arm: Node3D = %ARM
-
-
-
-
-#Константы
-const WALKING_SPEED = 5.0
-const SPRINTING_SPEED = 20.0
-const CROUCH_SPEED = 1.0
-const JUMP_VELOCITY = 4.5
-const MOUSE_SENS =0.4
-
+@export var player_data: PlayerData
+@export var weapon_manager: WeaponManager
 #переменные 
 var current_speed : float = 5.0
 var Lerp_Speed = 10
@@ -31,19 +23,20 @@ var Crouching : bool =false
 var Sliding : bool = false
 
 #Slide Vars
-var Slide_Timer =0.0
+var Slide_Timer = 0.0
 var Slide_Timer_Max =3.0
-var Slide_Vector = Vector2.ZERO
 var Slide_Speed = 30
 
 func _ready() -> void:
 	# отключаем курсор мыши 
+	Globals.player = self
+	switch_weapon.connect(weapon_manager.switch_weapon)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x * MOUSE_SENS))
-		head.rotate_x(deg_to_rad(-event.relative.y * MOUSE_SENS))
+		rotate_y(deg_to_rad(-event.relative.x * player_data.MOUSE_SENS))
+		head.rotate_x(deg_to_rad(-event.relative.y * player_data.MOUSE_SENS))
 		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-89),deg_to_rad(89))
 			# проверяем нажание кнопок. выглядит ужасно 
 
@@ -54,6 +47,10 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 		# машина состояний
 		# проверяем нажание кнопок. выглядит ужасно 
+	if Input.is_action_just_pressed("next_weapon"):
+		switch_weapon.emit("next")
+	if Input.is_action_just_pressed("prev_weapon"):
+		switch_weapon.emit("prev")
 	if Input.is_action_just_pressed("Crouch") and !Sprinting:
 		Walking =false
 		Sprinting =false
@@ -96,7 +93,7 @@ func _physics_process(delta: float) -> void:
 	
 	#логика присидания
 	if Crouching:
-		current_speed = lerp(current_speed,CROUCH_SPEED,delta*Lerp_Speed)
+		current_speed = lerp(current_speed,player_data.CROUCH_SPEED,delta*Lerp_Speed)
 		head.position.y =  lerp(head.position.y,1.0,delta*Lerp_Speed)
 		collision_stand.disabled = true
 		collision_crouch.disabled = false
@@ -110,7 +107,7 @@ func _physics_process(delta: float) -> void:
 			
 	#логика бега
 	if  Sprinting:
-		current_speed = lerp(current_speed,SPRINTING_SPEED,delta*Lerp_Speed)
+		current_speed = lerp(current_speed,player_data.SPRINTING_SPEED,delta*Lerp_Speed)
 		Globals.player_stamina -= 1.0 if Globals.player_stamina > 80.0 else 0.1
 		if Globals.player_stamina == 0:
 			Sprinting = false
@@ -119,7 +116,7 @@ func _physics_process(delta: float) -> void:
 		#нормализация скорости ходьбы
 	if Walking:
 		Globals.player_stamina += 1
-		current_speed = lerp(current_speed,WALKING_SPEED,delta*Lerp_Speed)
+		current_speed = lerp(current_speed,player_data.WALKING_SPEED,delta*Lerp_Speed)
 
 #Sliding logic
 	if Sliding:
@@ -143,7 +140,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#высота прыжка зависит от скорости 
-		velocity.y = JUMP_VELOCITY+(0.1*current_speed)
+		velocity.y = player_data.JUMP_VELOCITY+(0.1*current_speed)
 
 
 	#direction определяет направление 
