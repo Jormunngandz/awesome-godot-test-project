@@ -10,6 +10,8 @@ signal switch_weapon
 @onready var arm: Node3D = %ARM
 @export var player_data: PlayerData
 @export var weapon_manager: WeaponManager
+@onready var led: Node3D = $Led
+
 #переменные 
 var current_speed : float = 5.0
 var Lerp_Speed = 10
@@ -21,7 +23,7 @@ var Walking : bool =false
 var Sprinting : bool =false
 var Crouching : bool =false
 var Sliding : bool = false
-
+var Led_work : bool = false
 #Slide Vars
 var Slide_Timer = 0.0
 var Slide_Timer_Max =3.0
@@ -47,6 +49,18 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 		# машина состояний
 		# проверяем нажание кнопок. выглядит ужасно 
+	if Input.is_action_just_pressed("Led"):
+		if Led_work==false:
+			led.position =Vector3(-0.4,1.5,-0.5)
+			led.spot_light_3d.light_energy = 50.0
+			led.omni_light_3d.light_energy = 20.0
+			Led_work=true
+		elif Led_work==true:
+			led.position =Vector3(-0.25,1,0)
+			led.spot_light_3d.light_energy = 5.0
+			led.omni_light_3d.light_energy = 4.0
+			Led_work=false
+		
 	if Input.is_action_just_pressed("next_weapon"):
 		switch_weapon.emit("next")
 	if Input.is_action_just_pressed("prev_weapon"):
@@ -90,6 +104,9 @@ func _physics_process(delta: float) -> void:
 		Sliding = false
 		#print("ходим")
 	
+	
+	#логика фонарика
+
 	
 	#логика присидания
 	if Crouching:

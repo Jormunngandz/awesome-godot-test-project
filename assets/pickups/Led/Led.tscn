@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c77tultitk12w"]
+
+[ext_resource type="PackedScene" uid="uid://45h1q6yy2m61" path="res://assets/pickups/Led/Gem.glb" id="1_mc23g"]
+[ext_resource type="Script" uid="uid://c1gq7g3egcy67" path="res://src/player/led.gd" id="1_mmwto"]
+
+[node name="Led" type="Node3D" unique_id=1278552390]
+script = ExtResource("1_mmwto")
+
+[node name="Gem2" parent="." unique_id=2132809266 instance=ExtResource("1_mc23g")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Gem2" unique_id=24993874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0040263236, 0)
+light_color = Color(0.30259997, 0.89, 0.76273, 1)
+light_energy = 5.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Gem2" unique_id=703243525]
+light_color = Color(0.5576, 0.82, 0.7981333, 1)
+light_energy = 4.0
+spot_range = 10.0
+spot_angle = 25.0

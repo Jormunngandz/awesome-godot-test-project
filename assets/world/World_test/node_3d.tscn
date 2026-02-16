@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbinvhf6uaxi4"]
+
+[ext_resource type="PackedScene" uid="uid://css8bqs0ngofq" path="res://assets/world/World_test/GTA_test.glb" id="1_2sj3v"]
+
+[node name="Node3D" type="Node3D" unique_id=1775770755]
+
+[node name="GTA_test" parent="." unique_id=681302160 instance=ExtResource("1_2sj3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3043213, 0.003112793, 0.16741943)

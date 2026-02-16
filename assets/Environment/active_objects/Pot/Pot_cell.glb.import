@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://wqis6l41y0wt"
-path="res://.godot/imported/pot_cell.glb-ad4198ba60ac99dbb9578d352c95cc1a.scn"
+path="res://.godot/imported/Pot_cell.glb-9a75c92ee575477b7c2827acbad83699.scn"
 
 [deps]
 
-source_file="res://assets/environment/active_objects/pot/pot_cell.glb"
-dest_files=["res://.godot/imported/pot_cell.glb-ad4198ba60ac99dbb9578d352c95cc1a.scn"]
+source_file="res://assets/Environment/active_objects/Pot/Pot_cell.glb"
+dest_files=["res://.godot/imported/Pot_cell.glb-9a75c92ee575477b7c2827acbad83699.scn"]
 
 [params]
 

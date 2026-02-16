@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ogokwu8u3iw7"
-path="res://.godot/imported/Pot_solid.glb-3ae4f29891c815a989602894714a76ca.scn"
+uid="uid://css8bqs0ngofq"
+path="res://.godot/imported/GTA_test.glb-1a218c7231db59907b67632b4548a6c8.scn"
 
 [deps]
 
-source_file="res://assets/Environment/active_objects/Pot/Pot_solid.glb"
-dest_files=["res://.godot/imported/Pot_solid.glb-3ae4f29891c815a989602894714a76ca.scn"]
+source_file="res://assets/world/World_test/GTA_test.glb"
+dest_files=["res://.godot/imported/GTA_test.glb-1a218c7231db59907b67632b4548a6c8.scn"]
 
 [params]
 
