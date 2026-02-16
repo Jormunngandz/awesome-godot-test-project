@@ -38,8 +38,8 @@ func hit(hitted_obj: Node3D):
 		
 		
 func body_contact(_body_rid: RID, body: Node3D, body_shape_index: int, _local_shape_index: int) -> void:
-	hit(body)
 	if body.has_method("hit"):
+		hit(body)
 		var collision_part: CollisionShape3D = body.find_children("CollisionShape3D*")[body_shape_index]
 		body.hit(self, collision_part)
 		

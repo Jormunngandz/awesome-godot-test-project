@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bi8djjtxrwrst"]
 
-[ext_resource type="Script" uid="uid://b021214suuy55" path="res://src/weapon/weapon_data.gd" id="1_v1jop"]
+[ext_resource type="Script" uid="uid://b021214suuy55" path="res://src/weapon/resources/weapon_data.gd" id="1_v1jop"]
 [ext_resource type="PackedScene" uid="uid://cikuqd70uc32t" path="res://assets/weapon/skull_gun/skull_gun.tscn" id="2_ns477"]
 
 [resource]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bil726iy8yjcb"]
+
+[ext_resource type="Script" uid="uid://c3lurvf0qhsi5" path="res://src/items/pickups/pickup.gd" id="1_5cxit"]
+[ext_resource type="Resource" uid="uid://riegwcvr3o18" path="res://assets/pickups/weapons/sword/sword_pickup.tres" id="2_ok3tm"]
+[ext_resource type="PackedScene" uid="uid://bwixg3utb3nab" path="res://assets/weapon/sword/sword.fbx" id="3_ipvkt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pwgaq"]
+radius = 0.12060547
+height = 1.0192871
+
+[node name="SwordPickup" type="Node3D" unique_id=6791468 node_paths=PackedStringArray("audio_player", "model", "area")]
+script = ExtResource("1_5cxit")
+audio_player = NodePath("AudioStreamPlayer3D")
+stats = ExtResource("2_ok3tm")
+model = NodePath("sword")
+area = NodePath("sword/Area3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=93988043]
+
+[node name="sword" parent="." unique_id=668694285 instance=ExtResource("3_ipvkt")]
+
+[node name="Area3D" type="Area3D" parent="sword" unique_id=991763543]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sword/Area3D" unique_id=803708879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025756836, 0)
+shape = SubResource("CapsuleShape3D_pwgaq")

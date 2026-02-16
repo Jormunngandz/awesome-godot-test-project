@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbun6drr6s1qe"]
 
 [ext_resource type="Script" uid="uid://c3lurvf0qhsi5" path="res://src/items/pickups/pickup.gd" id="1_d6hyr"]
-[ext_resource type="Resource" uid="uid://dms8kf64kiuhu" path="res://assets/pickups/weapons/skull_gun_pick.tres" id="2_d6hyr"]
+[ext_resource type="Resource" uid="uid://dms8kf64kiuhu" path="res://assets/pickups/weapons/skull_gun/skull_gun_pick.tres" id="2_d6hyr"]
 [ext_resource type="PackedScene" uid="uid://qbs4lsncjwls" path="res://assets/weapon/skull_gun/skull_gun.fbx" id="3_6okko"]
 [ext_resource type="AudioStream" uid="uid://bos1p62peobp5" path="res://assets/weapon/skull_gun/skull_gun_shot.wav" id="4_58ihn"]
 
@@ -26,3 +26,4 @@ shape = SubResource("BoxShape3D_d6hyr")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=487724724]
 stream = ExtResource("4_58ihn")
+volume_db = -38.722

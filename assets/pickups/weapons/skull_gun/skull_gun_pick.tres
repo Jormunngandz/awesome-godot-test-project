@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponPickupData" format=3 uid="uid://dms8kf64kiuhu"]
+
+[ext_resource type="Resource" uid="uid://bi8djjtxrwrst" path="res://assets/resource/weapon/skull_gun.tres" id="1_eurwl"]
+[ext_resource type="Script" uid="uid://dpcpjow2k2u2u" path="res://src/items/pickups/resources/weapon_pickup_data.gd" id="2_shjlg"]
+
+[resource]
+script = ExtResource("2_shjlg")
+pick_obj = ExtResource("1_eurwl")
+name = "skullgun"
+value = 15
+metadata/_custom_type_script = "uid://dpcpjow2k2u2u"

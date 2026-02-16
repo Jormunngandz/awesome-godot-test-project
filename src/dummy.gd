@@ -41,9 +41,12 @@ func dead():
 		animation_player.play("dead")
 		
 	
-func hit(projectile: Projectile, damaged_part: Node3D):
+func hit(source, damaged_part: Node3D):
 	var multi_dmg: float = damaged_part.get_meta("dmg_mul", 1.0)
-	stats.hp -= projectile.projectile_data.damage * multi_dmg
+	if is_instance_of(source, Projectile):
+		stats.hp -= source.projectile_data.damage * multi_dmg
+	elif is_instance_of(source, MeleeWeapon):
+		stats.hp -= source.weapon_data.base_damage * multi_dmg
 	label_3d.text = str(stats.hp)
 	if stats.hp <=0:
 		dead()

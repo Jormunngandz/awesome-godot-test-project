@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponPickupData" format=3 uid="uid://riegwcvr3o18"]
+
+[ext_resource type="Resource" uid="uid://dajd28rqv4gl7" path="res://assets/resource/weapon/sword.tres" id="1_cthcx"]
+[ext_resource type="Script" uid="uid://dpcpjow2k2u2u" path="res://src/items/pickups/resources/weapon_pickup_data.gd" id="2_xtwuo"]
+
+[resource]
+script = ExtResource("2_xtwuo")
+pick_obj = ExtResource("1_cthcx")
+name = "sword"
+value = 10
+metadata/_custom_type_script = "uid://dpcpjow2k2u2u"

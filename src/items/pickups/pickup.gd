@@ -8,6 +8,8 @@ const SPEED:float = 0.01
 const AMPLITUDE:float = 0.002
 var time: float = 0.0 
 var frequency: float = 2.0
+var picked_status: bool = false
+
 func _process(delta: float) -> void:
 	time += delta
 	model.rotation.y += deg_to_rad(1)
@@ -18,9 +20,9 @@ func _ready() -> void:
 	area.body_entered.connect(body_entered)
 	
 func body_entered(body: Node3D) -> void:
-	if stats.has_method("pick") and stats.pick(body):
-		self.visible = false
-		set_deferred("monitoring", false) 
+	if stats.has_method("pick") and stats.pick(body) and not picked_status:
+		picked_status = true
+		visible = false
 		if audio_player:
 			audio_player.play()
 			await audio_player.finished
