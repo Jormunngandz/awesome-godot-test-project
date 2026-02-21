@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://chlj0ex63ecea"]
 
 [ext_resource type="Script" uid="uid://dm0owgx6ioqq5" path="res://src/environment/pot.gd" id="1_ducsn"]
-[ext_resource type="PackedScene" uid="uid://ogokwu8u3iw7" path="res://assets/environment/active_objects/pot/pot_solid.glb" id="2_cp7c6"]
+[ext_resource type="PackedScene" uid="uid://ogokwu8u3iw7" path="res://assets/Environment/active_objects/Pot/Pot_solid.glb" id="2_cp7c6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpl8d"]
 resource_name = "Pot"

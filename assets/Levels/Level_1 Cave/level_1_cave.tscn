@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bjsa6cc2fvdft"]
+
+[ext_resource type="VoxelGIData" uid="uid://be62bmedjwve0" path="res://assets/Levels/Level_1 Cave/level_1_cave.VoxelGI_data.res" id="2_djj1d"]
+[ext_resource type="PackedScene" uid="uid://dxeileh2tvous" path="res://assets/player/player.tscn" id="2_ewd8o"]
+[ext_resource type="PackedScene" uid="uid://dx7cbgw2k830p" path="res://assets/Levels/Level_1 Cave/Level1_Part1.gltf" id="4_djj1d"]
+[ext_resource type="PackedScene" uid="uid://dixni5uu4x53n" path="res://assets/Levels/Level_1 Cave/firefly.tscn" id="4_xin18"]
+[ext_resource type="PackedScene" uid="uid://dpw8lwjf7653s" path="res://assets/Levels/Level_1 Cave/Cave For Croc.glb" id="5_xin18"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xin18"]
+
+[sub_resource type="Sky" id="Sky_ewd8o"]
+sky_material = SubResource("PanoramaSkyMaterial_xin18")
+
+[sub_resource type="Environment" id="Environment_djj1d"]
+background_mode = 2
+sky = SubResource("Sky_ewd8o")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.45707792, 0.5243705, 0.7037797, 1)
+fog_light_energy = 0.72
+fog_sun_scatter = 1.0
+fog_density = 0.0045
+fog_sky_affect = 0.079
+
+[node name="Level_1_cave" type="Node3D" unique_id=1883149318]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1139354900]
+environment = SubResource("Environment_djj1d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=50447357]
+transform = Transform3D(-0.9986295, 0.04917974, -0.017899962, 0, 0.34202015, 0.9396926, 0.052335985, 0.9384048, -0.34155142, 0, 0, 0)
+light_color = Color(0.3532211, 0.7658618, 0.8005692, 1)
+shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." unique_id=198275142 instance=ExtResource("2_ewd8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.6)
+
+[node name="VoxelGI" type="VoxelGI" parent="." unique_id=603501127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46385193, 12.605888, -0.19256592)
+size = Vector3(37.627533, 29.273026, 60.627808)
+data = ExtResource("2_djj1d")
+
+[node name="OmniLight3D_tree1" type="OmniLight3D" parent="." unique_id=1765628890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6329603, 7.228738, -3.9302468)
+light_color = Color(0.4792025, 0.8849501, 0.8800479, 1)
+light_energy = 6.01
+omni_range = 5.513
+
+[node name="OmniLight3D2_tree2" type="OmniLight3D" parent="." unique_id=998502321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.565903, 5.872179, 0.5900588)
+light_color = Color(0.3868908, 0.8973576, 0.91003853, 1)
+light_energy = 5.0
+omni_range = 7.448
+
+[node name="OmniLight3D3_tree3" type="OmniLight3D" parent="." unique_id=1736482961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1720033, 11.043365, -5.6069193)
+light_color = Color(0.64678437, 0.8521444, 0.8491692, 1)
+light_energy = 7.934
+omni_range = 9.185
+
+[node name="OmniLight3D_cave" type="OmniLight3D" parent="." unique_id=2021949342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121236324, 6.353245, -3.543849)
+light_color = Color(0.4829802, 0.8689258, 0.9794845, 1)
+light_energy = 0.991
+omni_range = 20.975
+
+[node name="OmniLight3D_face" type="OmniLight3D" parent="." unique_id=1039438297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36820388, 2.6090653, 5.3581624)
+light_color = Color(0.8149427, 0.8080187, 0.77064633, 1)
+light_energy = 0.3
+omni_range = 1.414
+
+[node name="Level1_Part1" parent="." unique_id=962411344 instance=ExtResource("4_djj1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00048089027, 0.008520126, -0.0010552406)
+
+[node name="Firefly" parent="." unique_id=102994529 instance=ExtResource("4_xin18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7571151, 11.454918, -1.8130159)
+
+[node name="OmniLight3D3_SF" type="OmniLight3D" parent="." unique_id=1196864012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3611505, 0.9285872, 5.244304)
+light_color = Color(0.26106647, 0.8683286, 0.9650335, 1)
+light_energy = 0.2
+omni_range = 1.0
+omni_attenuation = 0.154
+
+[node name="OmniLight3D3_SF2" type="OmniLight3D" parent="." unique_id=1538661841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7302357, 1.3706385, 5.1494265)
+light_color = Color(0.21925953, 0.5007753, 0.66814476, 1)
+light_energy = 0.5
+light_indirect_energy = 0.943
+omni_range = 1.0
+omni_attenuation = 0.154
+
+[node name="OmniLight3D3_SF3" type="OmniLight3D" parent="." unique_id=1215936602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2605989, 2.600824, 4.7473044)
+light_color = Color(0.13510105, 0.495952, 0.72274023, 1)
+omni_range = 1.0
+omni_attenuation = 0.154
+
+[node name="Cave For Croc" parent="." unique_id=1104043552 instance=ExtResource("5_xin18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015907288, 0, 0.05543518)

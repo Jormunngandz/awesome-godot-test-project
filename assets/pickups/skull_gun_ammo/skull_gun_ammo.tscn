@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3lurvf0qhsi5" path="res://src/items/pickups/pickup.gd" id="1_6wfsl"]
 [ext_resource type="PackedScene" uid="uid://bcmw6a3ti1vmv" path="res://assets/pickups/skull_gun_ammo/skull_gun_ammo.glb" id="1_lg3em"]
 [ext_resource type="Resource" uid="uid://bv2j5ob75k3ms" path="res://assets/pickups/skull_gun_ammo/skull_gun_ammo.tres" id="2_ava1o"]
-[ext_resource type="AudioStream" uid="uid://b5eshwbt232j1" path="res://assets/npc/enemies/sprj_c1000#1 (born_01).wav" id="4_ava1o"]
+[ext_resource type="AudioStream" uid="uid://b5eshwbt232j1" path="res://assets/npc/enemies/Dummy/sprj_c1000#1 (born_01).wav" id="4_ava1o"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_borpb"]
 height = 1.1462402

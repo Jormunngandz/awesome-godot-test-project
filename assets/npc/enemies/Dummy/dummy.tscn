@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://dnnrewvgtb2hw"]
+
+[ext_resource type="Script" uid="uid://6h205kdh4as8" path="res://src/dummy.gd" id="1_17pi3"]
+[ext_resource type="Resource" uid="uid://bl00ml2dfoa0k" path="res://assets/resource/npc/enemies/dummy.tres" id="2_fmhme"]
+[ext_resource type="PackedScene" uid="uid://4khhdj8cyyps" path="res://assets/npc/enemies/Dummy/dummy.glb" id="2_ioovt"]
+[ext_resource type="AudioStream" uid="uid://b5eshwbt232j1" path="res://assets/npc/enemies/Dummy/sprj_c1000#1 (born_01).wav" id="3_ljk0a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljk0a"]
+size = Vector3(0.76989746, 0.5077785, 0.45788574)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fmhme"]
+height = 1.7568359
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ljk0a"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljk0a"]
+albedo_color = Color(0.9098039, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(0.7372549, 0, 0, 1)
+emission_energy_multiplier = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_x7iiq"]
+material = SubResource("StandardMaterial3D_ljk0a")
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="Animation" id="Animation_ljk0a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D_blood:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3dm_Dummy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3DBody:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape3DHead:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_x7iiq"]
+resource_name = "dead"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D_blood:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3dm_Dummy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3DBody:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.46666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CollisionShape3DHead:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fmhme"]
+resource_name = "spawn"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.79999983,
+"start_offset": 0.0,
+"stream": ExtResource("3_ljk0a")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gi8xn"]
+_data = {
+&"RESET": SubResource("Animation_ljk0a"),
+&"dead": SubResource("Animation_x7iiq"),
+&"spawn": SubResource("Animation_fmhme")
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=481157967]
+script = ExtResource("1_17pi3")
+npc_stats = ExtResource("2_fmhme")
+
+[node name="3dm_Dummy" parent="." unique_id=1445080772 instance=ExtResource("2_ioovt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.06, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1553795742]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=368457490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4309536, 0)
+volume_db = 42.94
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1311967813]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.7279222, 0)
+pixel_size = 0.01
+text = "test"
+
+[node name="CollisionShape3DHead" type="CollisionShape3D" parent="." unique_id=2087154304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007507324, 2.2308717, 0.0004272461)
+shape = SubResource("BoxShape3D_ljk0a")
+metadata/dmg_mul = 2.0
+
+[node name="CollisionShape3DBody" type="CollisionShape3D" parent="." unique_id=1875117190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0088042, 0)
+shape = SubResource("CapsuleShape3D_fmhme")
+metadata/dmg_mul = 1.0
+
+[node name="GPUParticles3D_blood" type="GPUParticles3D" parent="." unique_id=1780015844]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.4391012, 0.030972198)
+emitting = false
+amount = 48
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ljk0a")
+draw_pass_1 = SubResource("BoxMesh_x7iiq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1416678251]
+libraries/ = SubResource("AnimationLibrary_gi8xn")

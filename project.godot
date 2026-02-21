@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="new-game-project"
-run/main_scene="uid://pmppnyt1emko"
+run/main_scene="uid://ckq22x8p63pig"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -28,6 +28,7 @@ window/size/viewport_height=1080
 [file_customization]
 
 folder_colors={
+"res://assets/Levels/": "purple",
 "res://assets/gui/": "green",
 "res://assets/main/": "red",
 "res://assets/world/": "pink"

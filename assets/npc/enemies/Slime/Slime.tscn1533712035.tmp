@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://w2dfde4413a2"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1g6xtfmvrk3h" path="res://assets/npc/enemies/Slime/Icosphere.obj" id="1_sb034"]
+[ext_resource type="Script" uid="uid://odlnhh7l4q0f" path="res://src/slime.gd" id="1_v81es"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v81es"]
+radius = 0.25
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=213290691]
+script = ExtResource("1_v81es")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1530620262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25107986, 0)
+shape = SubResource("SphereShape3D_v81es")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=2132076914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2868042, 0)
+text = "test"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=261302970]
+
+[node name="SoftBody3D" type="SoftBody3D" parent="." unique_id=2117766550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43306485, 0)
+mesh = ExtResource("1_sb034")
+parent_collision_ignore = NodePath("..")
+total_mass = 2.0
+linear_stiffness = 0.1
+pressure_coefficient = 10.0
+pinned_points = [27, 13, 23]
+attachments/0/point_index = 27
+attachments/0/spatial_attachment_path = NodePath("..")
+attachments/0/offset = Vector3(0, 0.43306485, 0)
+attachments/1/point_index = 13
+attachments/1/spatial_attachment_path = NodePath("..")
+attachments/1/offset = Vector3(0, 0.43306485, 0)
+attachments/2/point_index = 23
+attachments/2/spatial_attachment_path = NodePath("..")
+attachments/2/offset = Vector3(0, 0.43306485, 0)
