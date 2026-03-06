@@ -1,6 +1,6 @@
 extends Node3D
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
-@export var enemy = preload("res://assets/npc/enemies/dummy.tscn")
+@export var enemy = preload("res://assets/npc/enemies/Dummy/dummy.tscn")
 @onready var marker_3d: Marker3D = $marker_3d
 
 var enemy_instance

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b5eshwbt232j1"
-path="res://.godot/imported/sprj_c1000#1 (born_01).wav-27bb83039f666546a4cdf0e6a38ba81f.sample"
+path="res://.godot/imported/sprj_c1000#1 (born_01).wav-a735977c974d39f5781738e4212faf66.sample"
 
 [deps]
 
-source_file="res://assets/npc/enemies/Dummy/sprj_c1000#1 (born_01).wav"
-dest_files=["res://.godot/imported/sprj_c1000#1 (born_01).wav-27bb83039f666546a4cdf0e6a38ba81f.sample"]
+source_file="res://assets/npc/enemies/dummy/sprj_c1000#1 (born_01).wav"
+dest_files=["res://.godot/imported/sprj_c1000#1 (born_01).wav-a735977c974d39f5781738e4212faf66.sample"]
 
 [params]
 

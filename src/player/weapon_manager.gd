@@ -7,7 +7,7 @@ enum WEAPON_STATES {READY, UNEQUPED, SWITCHING}
 var current_states  = WEAPON_STATES.UNEQUPED
 func _ready() -> void:
 	Globals.pick_up_weapon.connect(obtain_weapon)
-
+	Messager.ammo_picked.connect(refill_ammo)
 
 func _physics_process(_delta: float) -> void:
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and current_states == WEAPON_STATES.READY:
@@ -51,7 +51,16 @@ func switch_weapon(direction: String):
 	equiped_weapon_scene = weapon_model
 	arm.add_child(equiped_weapon_scene)
 	current_states = WEAPON_STATES.READY
-		
+
+func refill_ammo(ammo_pickup_data:AmmoPickupData) -> bool:
+	var ammo_type: = ammo_pickup_data.ammo_for.name
+	for weapon_type:WeaponData in weapon_list:
+		if weapon_type.name == ammo_type:
+			print("ammo_before", weapon_type.current_ammo)
+			weapon_type.current_ammo += ammo_pickup_data.value
+			print("ammo_added", weapon_type.current_ammo)
+			return true	
+	return false
 
 func weapon_attack():
 	pass

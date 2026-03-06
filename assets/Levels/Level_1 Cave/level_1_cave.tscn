@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bjsa6cc2fvdft"]
 
-[ext_resource type="VoxelGIData" uid="uid://be62bmedjwve0" path="res://assets/Levels/Level_1 Cave/level_1_cave.VoxelGI_data.res" id="2_djj1d"]
+[ext_resource type="VoxelGIData" uid="uid://be62bmedjwve0" path="res://assets/resource/GI/level_1_cave.VoxelGI_data.res" id="2_djj1d"]
 [ext_resource type="PackedScene" uid="uid://dxeileh2tvous" path="res://assets/player/player.tscn" id="2_ewd8o"]
-[ext_resource type="PackedScene" uid="uid://dx7cbgw2k830p" path="res://assets/Levels/Level_1 Cave/Level1_Part1.gltf" id="4_djj1d"]
-[ext_resource type="PackedScene" uid="uid://dixni5uu4x53n" path="res://assets/Levels/Level_1 Cave/firefly.tscn" id="4_xin18"]
-[ext_resource type="PackedScene" uid="uid://dpw8lwjf7653s" path="res://assets/Levels/Level_1 Cave/Cave For Croc.glb" id="5_xin18"]
+[ext_resource type="PackedScene" uid="uid://dixni5uu4x53n" path="res://assets/Levels/Level_1 Cave/assets/models/firefly/firefly.tscn" id="4_xin18"]
+[ext_resource type="PackedScene" uid="uid://bynuxr3xmkpe3" path="res://assets/Levels/Level_1 Cave/assets/models/level_parts/main_part/Level1_Part1.glb" id="5_kqs65"]
+[ext_resource type="PackedScene" uid="uid://dpw8lwjf7653s" path="res://assets/Levels/Level_1 Cave/assets/models/level_parts/croc_part/Cave For Croc.glb" id="5_xin18"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xin18"]
 
@@ -71,9 +71,6 @@ light_color = Color(0.8149427, 0.8080187, 0.77064633, 1)
 light_energy = 0.3
 omni_range = 1.414
 
-[node name="Level1_Part1" parent="." unique_id=962411344 instance=ExtResource("4_djj1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00048089027, 0.008520126, -0.0010552406)
-
 [node name="Firefly" parent="." unique_id=102994529 instance=ExtResource("4_xin18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7571151, 11.454918, -1.8130159)
 
@@ -100,3 +97,5 @@ omni_attenuation = 0.154
 
 [node name="Cave For Croc" parent="." unique_id=1104043552 instance=ExtResource("5_xin18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015907288, 0, 0.05543518)
+
+[node name="Level1_Part1" parent="." unique_id=616027176 instance=ExtResource("5_kqs65")]

@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dwj056aat4xm2"
-path="res://.godot/imported/Slime.obj-e582e2d8f2989292c9d8fea2483e3c80.mesh"
+path="res://.godot/imported/Slime.obj-9a342ab5653c56c59b295b7a6596c0e4.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Slime.obj-e582e2d8f2989292c9d8fea2483e3c80.mesh"]
+files=["res://.godot/imported/Slime.obj-9a342ab5653c56c59b295b7a6596c0e4.mesh"]
 
-source_file="res://assets/npc/enemies/Slime/Slime.obj"
-dest_files=["res://.godot/imported/Slime.obj-e582e2d8f2989292c9d8fea2483e3c80.mesh", "res://.godot/imported/Slime.obj-e582e2d8f2989292c9d8fea2483e3c80.mesh"]
+source_file="res://assets/npc/enemies/slime/Slime.obj"
+dest_files=["res://.godot/imported/Slime.obj-9a342ab5653c56c59b295b7a6596c0e4.mesh", "res://.godot/imported/Slime.obj-9a342ab5653c56c59b295b7a6596c0e4.mesh"]
 
 [params]
 

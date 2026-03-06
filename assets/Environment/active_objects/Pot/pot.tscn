@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://chlj0ex63ecea"]
 
-[ext_resource type="Script" uid="uid://dm0owgx6ioqq5" path="res://src/environment/pot.gd" id="1_ducsn"]
-[ext_resource type="PackedScene" uid="uid://ogokwu8u3iw7" path="res://assets/Environment/active_objects/Pot/Pot_solid.glb" id="2_cp7c6"]
+[ext_resource type="Script" uid="uid://c8q1cak15ugl4" path="res://src/universal breaking.gd" id="1_turm6"]
+[ext_resource type="PackedScene" uid="uid://ogokwu8u3iw7" path="res://assets/environment/active_objects/pot/pot_solid.glb" id="2_cp7c6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpl8d"]
 resource_name = "Pot"
@@ -491,8 +491,12 @@ points = PackedVector3Array(0.1081377, 0.06292866, -0.11186737, 0.1376034, 0.064
 height = 0.50476074
 radius = 0.19091797
 
-[node name="Node3D" type="Node3D" unique_id=1405896602]
-script = ExtResource("1_ducsn")
+[node name="Node3D" type="Node3D" unique_id=1405896602 node_paths=PackedStringArray("broken", "solid", "area")]
+script = ExtResource("1_turm6")
+broken = NodePath("Pot_Broken")
+solid = NodePath("Pot_solid")
+area = NodePath("Area3D")
+intensity = 3
 
 [node name="Pot_solid" parent="." unique_id=1902303114 instance=ExtResource("2_cp7c6")]
 

@@ -5,7 +5,7 @@ class_name FireWeapon extends Node3D
 @export var projectile_model: PackedScene # scene of projectile to instanciate
 
 
-func fire(weapon_data: WeaponData) -> void:
+func fire(_weapon_data: WeaponData) -> void:
 	var projectile = projectile_model.instantiate()
 
 	projectile.position = muzzle.global_position

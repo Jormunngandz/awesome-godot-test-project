@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="AmmoPickupData" format=3 uid="uid://bv2j5ob75k3ms"]
 
 [ext_resource type="Script" uid="uid://bteee8c3q8knx" path="res://src/items/pickups/resources/ammo_pickup_data.gd" id="1_uhjx1"]
+[ext_resource type="Resource" uid="uid://bi8djjtxrwrst" path="res://assets/resource/weapon/skull_gun.tres" id="1_wybmd"]
 
 [resource]
 script = ExtResource("1_uhjx1")
-name = "skullgunammo"
-value = 6
-stackable = true
+ammo_for = ExtResource("1_wybmd")
+name = "Skull gun ammo"
+value = 15
 metadata/_custom_type_script = "uid://bteee8c3q8knx"

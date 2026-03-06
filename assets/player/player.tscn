@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bc730vf4meud6" path="res://src/player/player.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://c786x1bv4vjbw" path="res://src/player/player_data.gd" id="2_v2miy"]
 [ext_resource type="Script" uid="uid://bsowf7i6lfddv" path="res://src/player/weapon_manager.gd" id="3_v2miy"]
-[ext_resource type="PackedScene" uid="uid://c77tultitk12w" path="res://assets/pickups/Led/Led.tscn" id="4_ouxva"]
+[ext_resource type="PackedScene" uid="uid://c77tultitk12w" path="res://assets/player/Led/Led.tscn" id="4_ouxva"]
+[ext_resource type="Script" uid="uid://calvyttpraki" path="res://src/player/player_manager.gd" id="5_d5dr7"]
 
 [sub_resource type="Resource" id="Resource_ouxva"]
 script = ExtResource("2_v2miy")
@@ -16,11 +17,12 @@ height = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ddoul"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=198275142 node_paths=PackedStringArray("weapon_manager")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=198275142 node_paths=PackedStringArray("weapon_manager", "player_manager")]
 collision_layer = 3
 script = ExtResource("1_4ntmi")
 player_data = SubResource("Resource_ouxva")
 weapon_manager = NodePath("WeaponManager")
+player_manager = NodePath("PlayerManager")
 
 [node name="Collision_Stand" type="CollisionShape3D" parent="." unique_id=1336427990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -56,4 +58,7 @@ script = ExtResource("3_v2miy")
 metadata/_custom_type_script = "uid://bsowf7i6lfddv"
 
 [node name="Led" parent="." unique_id=1278552390 instance=ExtResource("4_ouxva")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1, 0)
+
+[node name="PlayerManager" type="Node" parent="." unique_id=361066322]
+script = ExtResource("5_d5dr7")
+metadata/_custom_type_script = "uid://calvyttpraki"

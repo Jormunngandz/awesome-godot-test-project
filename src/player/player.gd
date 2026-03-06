@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 signal switch_weapon
 
 @onready var head: Node3D = $Head
@@ -10,6 +10,7 @@ signal switch_weapon
 @onready var arm: Node3D = %ARM
 @export var player_data: PlayerData
 @export var weapon_manager: WeaponManager
+@export var player_manager: PlayerManager
 @onready var led: Node3D = $Led
 
 #переменные 
@@ -23,7 +24,6 @@ var Walking : bool =false
 var Sprinting : bool =false
 var Crouching : bool =false
 var Sliding : bool = false
-var Led_work : bool = false
 #Slide Vars
 var Slide_Timer = 0.0
 var Slide_Timer_Max =3.0
@@ -50,16 +50,8 @@ func _physics_process(delta: float) -> void:
 		# машина состояний
 		# проверяем нажание кнопок. выглядит ужасно 
 	if Input.is_action_just_pressed("Led"):
-		if Led_work==false:
-			led.position =Vector3(-0.4,1.5,-0.5)
-			led.spot_light_3d.light_energy = 50.0
-			led.omni_light_3d.light_energy = 20.0
-			Led_work=true
-		elif Led_work==true:
-			led.position =Vector3(-0.25,1,0)
-			led.spot_light_3d.light_energy = 5.0
-			led.omni_light_3d.light_energy = 4.0
-			Led_work=false
+			led.turn_off_on()
+
 		
 	if Input.is_action_just_pressed("next_weapon"):
 		switch_weapon.emit("next")
@@ -84,7 +76,7 @@ func _physics_process(delta: float) -> void:
 		
 		Crouching =false
 		Sliding = false
-	if Input.is_action_just_pressed("Sprint") and Globals.player_stamina > 0:
+	if Input.is_action_just_pressed("Sprint") and Globals.player.player_manager.player_stamina > 0:
 		Walking =false
 		Sprinting =true
 		Crouching =false
@@ -125,14 +117,14 @@ func _physics_process(delta: float) -> void:
 	#логика бега
 	if  Sprinting:
 		current_speed = lerp(current_speed,player_data.SPRINTING_SPEED,delta*Lerp_Speed)
-		Globals.player_stamina -= 1.0 if Globals.player_stamina > 80.0 else 0.1
-		if Globals.player_stamina == 0:
+		Globals.player.player_manager.player_stamina -= 1.0 if Globals.player.player_manager.player_stamina > 80.0 else 0.1
+		if Globals.player.player_manager.player_stamina == 0:
 			Sprinting = false
 			Walking = true
 		
 		#нормализация скорости ходьбы
 	if Walking:
-		Globals.player_stamina += 1
+		Globals.player.player_manager.player_stamina += 1
 		current_speed = lerp(current_speed,player_data.WALKING_SPEED,delta*Lerp_Speed)
 
 #Sliding logic

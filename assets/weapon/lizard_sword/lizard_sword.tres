@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://5lp7r36k8u7d"]
+
+[ext_resource type="Script" uid="uid://b021214suuy55" path="res://src/weapon/resources/weapon_data.gd" id="1_xeg7h"]
+
+[resource]
+script = ExtResource("1_xeg7h")
+name = "lizard_sword"
+metadata/_custom_type_script = "uid://b021214suuy55"

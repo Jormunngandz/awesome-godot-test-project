@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="base_npc" format=3 uid="uid://co0l6dd4ecu1v"]
+
+[ext_resource type="Script" uid="uid://w37vsnbasuyu" path="res://src/enemies/resources/base_npc.gd" id="1_eihac"]
+
+[resource]
+script = ExtResource("1_eihac")
+hp = 120.0
+name = "Lizard"
+metadata/_custom_type_script = "uid://w37vsnbasuyu"

@@ -24,11 +24,11 @@ func update_elemets():
 	update_hp_bar()
 
 func update_stamina():
-	stamina_bar.value = Globals.player_stamina
+	stamina_bar.value = Globals.player.player_manager.player_stamina
 	
 	
 func update_hp_bar():
-	hp_bar.value = Globals.player_heal
+	hp_bar.value = Globals.player.player_manager.player_heal
 
 func get_new_target(new_target):
 	if new_target and new_target.is_in_group("Enemy"):

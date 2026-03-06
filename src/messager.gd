@@ -7,3 +7,5 @@ signal resume
 signal back_to_main_menu
 @warning_ignore("unused_signal")
 signal new_enemy_spotted
+@warning_ignore("unused_signal")
+signal ammo_picked(ammo:AmmoPickupData)

@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dnnrewvgtb2hw"]
 
-[ext_resource type="Script" uid="uid://6h205kdh4as8" path="res://src/dummy.gd" id="1_17pi3"]
-[ext_resource type="Resource" uid="uid://bl00ml2dfoa0k" path="res://assets/resource/npc/enemies/dummy.tres" id="2_fmhme"]
-[ext_resource type="PackedScene" uid="uid://4khhdj8cyyps" path="res://assets/npc/enemies/Dummy/dummy.glb" id="2_ioovt"]
-[ext_resource type="AudioStream" uid="uid://b5eshwbt232j1" path="res://assets/npc/enemies/Dummy/sprj_c1000#1 (born_01).wav" id="3_ljk0a"]
+[ext_resource type="PackedScene" uid="uid://4khhdj8cyyps" path="res://assets/npc/enemies/dummy/dummy.glb" id="2_ioovt"]
+[ext_resource type="AudioStream" uid="uid://b5eshwbt232j1" path="res://assets/npc/enemies/dummy/sprj_c1000#1 (born_01).wav" id="3_ljk0a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ljk0a"]
 size = Vector3(0.76989746, 0.5077785, 0.45788574)
@@ -196,8 +194,6 @@ _data = {
 }
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=481157967]
-script = ExtResource("1_17pi3")
-npc_stats = ExtResource("2_fmhme")
 
 [node name="3dm_Dummy" parent="." unique_id=1445080772 instance=ExtResource("2_ioovt")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.06, 0)

@@ -5,23 +5,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bpr486qdlmsaj" path="res://assets/weapon/skull_gun/skull_mesh.tres" id="2_itcdx"]
 [ext_resource type="Resource" uid="uid://bwe87gcbol6vv" path="res://assets/weapon/skull_gun/skull_gun_projectile/skull_projectile_stats.tres" id="3_s6hyj"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8881f"]
-size = Vector3(0.3, 0.3, 0.3)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_itcdx"]
-spread = 180.0
-initial_velocity_min = 1.0
-initial_velocity_max = 5.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6hyj"]
-albedo_color = Color(0.9490196, 0.32156864, 0, 1)
-emission_enabled = true
-emission = Color(0.99999994, 0.44499302, 0.0060250075, 1)
-emission_energy_multiplier = 6.68
-
-[sub_resource type="BoxMesh" id="BoxMesh_wtdjm"]
-material = SubResource("StandardMaterial3D_s6hyj")
-size = Vector3(0.1, 0.1, 0.1)
+[sub_resource type="SphereShape3D" id="SphereShape3D_s6hyj"]
+radius = 0.13803408
 
 [sub_resource type="Animation" id="Animation_cksiq"]
 resource_name = "Hit"
@@ -29,7 +14,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/GPUParticles3D:emitting")
+tracks/0/path = NodePath("GPUParticles3D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -41,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/Skull:visible")
+tracks/1/path = NodePath("Skull:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -52,7 +37,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Area3D/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -82,7 +67,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/GPUParticles3D:emitting")
+tracks/0/path = NodePath("GPUParticles3D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -94,7 +79,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/Skull:visible")
+tracks/1/path = NodePath("Skull:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -105,7 +90,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Area3D/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -122,28 +107,46 @@ _data = {
 &"RESET": SubResource("Animation_itcdx")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_itcdx"]
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6hyj"]
+albedo_color = Color(0.9490196, 0.32156864, 0, 1)
+emission_enabled = true
+emission = Color(0.99999994, 0.44499302, 0.0060250075, 1)
+emission_energy_multiplier = 6.68
+
+[sub_resource type="BoxMesh" id="BoxMesh_wtdjm"]
+material = SubResource("StandardMaterial3D_s6hyj")
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="Projectile_Skull" type="Node3D" unique_id=1103673876 node_paths=PackedStringArray("audio_player", "shape", "contact_area", "on_hit_particles", "animation_player")]
 script = ExtResource("1_62m5x")
-audio_player = NodePath("Area3D/AudioStreamPlayer3D")
+audio_player = NodePath("AudioStreamPlayer3D")
 projectile_model = ExtResource("2_itcdx")
 shape = NodePath("Area3D/CollisionShape3D")
 contact_area = NodePath("Area3D")
-on_hit_particles = NodePath("Area3D/GPUParticles3D")
+on_hit_particles = NodePath("GPUParticles3D")
 animation_player = NodePath("AnimationPlayer")
 projectile_data = ExtResource("3_s6hyj")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=113057594]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1189863004]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
-shape = SubResource("BoxShape3D_8881f")
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.023177505, 0)
+shape = SubResource("SphereShape3D_s6hyj")
 
-[node name="Skull" parent="Area3D" unique_id=233544053 instance=ExtResource("1_bscid")]
-transform = Transform3D(0.9999798, 0.0063397745, -0.00040995068, 8.724066e-08, 0.064514816, 0.99791676, 0.006353015, -0.9978966, 0.06451351, -3.0670837e-08, -0.45160073, 0.42587525)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1305292161]
+libraries/ = SubResource("AnimationLibrary_s6hyj")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D" unique_id=1599591504]
+[node name="Skull" parent="." unique_id=233544053 instance=ExtResource("1_bscid")]
+transform = Transform3D(0.9999798, 0.0063397745, -0.00040995068, 8.724066e-08, 0.064514816, 0.99791676, 0.006353015, -0.9978966, 0.06451351, -3.0670837e-08, -0.4213826, 0.34933144)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Area3D" unique_id=263377208]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1599591504]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=263377208]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.057130754, 0.030972198)
 emitting = false
 amount = 24
@@ -153,6 +156,3 @@ explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_itcdx")
 draw_pass_1 = SubResource("BoxMesh_wtdjm")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1305292161]
-libraries/ = SubResource("AnimationLibrary_s6hyj")

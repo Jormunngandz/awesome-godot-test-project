@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="base_npc" format=3 uid="uid://bl00ml2dfoa0k"]
 
-[ext_resource type="Script" uid="uid://w37vsnbasuyu" path="res://assets/npc/base_enemy.gd" id="1_tla1q"]
+[ext_resource type="Script" uid="uid://w37vsnbasuyu" path="res://src/enemies/resources/base_npc.gd" id="1_tla1q"]
 
 [resource]
 script = ExtResource("1_tla1q")

@@ -1,20 +1,25 @@
 [gd_scene format=3 uid="uid://w2dfde4413a2"]
 
-[ext_resource type="Script" uid="uid://odlnhh7l4q0f" path="res://src/slime.gd" id="1_v81es"]
-[ext_resource type="ArrayMesh" uid="uid://dwj056aat4xm2" path="res://assets/npc/enemies/Slime/Slime.obj" id="2_v81es"]
+[ext_resource type="Script" uid="uid://copn4tqpilx17" path="res://src/enemies/base_enemy_logic.gd" id="1_5xm2i"]
+[ext_resource type="Resource" uid="uid://db305xbiltaq6" path="res://assets/npc/enemies/slime/slime_stats.tres" id="2_qpu4q"]
+[ext_resource type="ArrayMesh" uid="uid://dwj056aat4xm2" path="res://assets/npc/enemies/slime/Slime.obj" id="2_v81es"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_v81es"]
-radius = 0.25
+radius = 0.4402746
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v81es"]
 transparency = 1
 albedo_color = Color(0.86, 0.06879999, 0.38528007, 0.9019608)
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=213290691]
-script = ExtResource("1_v81es")
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=213290691 node_paths=PackedStringArray("navigation_agent", "attack_raycast", "body_collision") groups=["Enemy"]]
+script = ExtResource("1_5xm2i")
+navigation_agent = NodePath("NavigationAgent3D")
+npc_stats = ExtResource("2_qpu4q")
+attack_raycast = NodePath("RayCast3D")
+body_collision = NodePath("CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1530620262]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25107986, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38288867, 0)
 shape = SubResource("SphereShape3D_v81es")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=2132076914]
@@ -51,3 +56,6 @@ attachments/4/offset = Vector3(-0.08123213, 0.011979271, 0.24999619)
 attachments/5/point_index = 32
 attachments/5/spatial_attachment_path = NodePath("..")
 attachments/5/offset = Vector3(-0.26286697, 0.011979271, -7.6293945e-06)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=194064578]
+transform = Transform3D(0.0004718244, 0.0065279608, 0.99997854, 0.888057, -0.4597265, 0.0025821181, 0.4597335, 0.88803655, -0.006014092, 0, 0, 0)

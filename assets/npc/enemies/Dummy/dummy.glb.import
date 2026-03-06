@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://4khhdj8cyyps"
-path="res://.godot/imported/dummy.glb-b849f02513acb613ce15ae401652e080.scn"
+path="res://.godot/imported/dummy.glb-0663f950a2616c25320202b72a63303f.scn"
 
 [deps]
 
-source_file="res://assets/npc/enemies/Dummy/dummy.glb"
-dest_files=["res://.godot/imported/dummy.glb-b849f02513acb613ce15ae401652e080.scn"]
+source_file="res://assets/npc/enemies/dummy/dummy.glb"
+dest_files=["res://.godot/imported/dummy.glb-0663f950a2616c25320202b72a63303f.scn"]
 
 [params]
 
